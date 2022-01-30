@@ -10,19 +10,19 @@ The de-facto configuration list is located in [config.go](https://github.com/op
 
 Use the following small steps to configure `orchestrator`:
 
-* [[Configuration: Backend id=51d20469-439a-451a-a336-6726cff3a142]] 
-* [[Configuration: Basic discovery id=427c7b47-af1a-4fbd-991d-150be63cb385]] 
-* [[Configuration: Discovery, name resolving id=40d5828c-7e46-42d7-8143-1e80a5b08bbc]] 
-* [[Configuration: Discovery, classifying servers id=b169c092-dcf3-4fe9-87ce-8cbe95b331e1]] 
-* [[Configuration: Discovery, Pseudo-GTID id=&#39;f65504cf-f002-4cc4-beb7-acfac2b125c6&#39;]]
-* [[Configuration: Topology control id=&#39;74887b53-dedf-4af0-bbc9-d8826af2455e&#39;]]
+* [Configuration: Backend](Setup/配置/Configuration%20%20Backend.md)
+* [[Configuration: Basic discovery](Setup/配置/Configuration%20%20Basic%20Discovery.md)
+* [Configuration: Discovery, name resolving](Setup/配置/Configuration%20%20Discovery%2C%20name%20resolving.md)
+* [[Configuration: Discovery, classifying servers](Setup/配置/Configuration%20%20Discovery%2C%20classifying%20servers.md)
+* [Configuration: Discovery, Pseudo-GTID](Setup/配置/Configuration%20%20Discovery%2C%20Pseudo-GTID.md)
+* [Configuration: Topology control](Setup/配置/Configuration%20%20Topology%20control.md)
 * [Configuration: Failure detection](Setup/配置/Configuration%20%20Failure%20detection.md)  
 * [Configuration: Recovery](Setup/配置/Configuration%20%20Recovery.md)
-* [[Configuration: Raft id=02ad8b7b-1cf4-4925-9233-1bd744018d25]] configure a[[Orchestrator/raft, consensus cluster id=355cf04c-56ad-4501-943a-39bbbc59e3bf]]for high availability
+* [Configuration: Raft](Setup/配置/Configuration%20%20Raft.md) configure a[[Orchestrator/raft, consensus cluster id=355cf04c-56ad-4501-943a-39bbbc59e3bf]]for high availability
 
-*  Security: See[[Security id=b9023aa8-211e-4a05-b09d-19e11cef3268]]section.
-* [[Configuration: Key-Value stores id=&#39;351cd58b-23ad-4077-9e72-08491b671195&#39;]]configure and use key-value stores for master discovery.
-* [[Orchestrator configuration in larger environments id=&#39;3d01d4fe-4a1a-4415-97e5-322717537a45&#39;]]
+*  Security: See[Security](Various/Security.md)section.
+* [Configuration: Key-Value stores](Setup/配置/Configuration%20%20Key-Value%20stores.md)configure and use key-value stores for master discovery.
+* [Orchestrator configuration in larger environments](Setup/配置/Orchestrator%20configuration%20in%20larger%20environments.md)
 
 ### Configuration sample file
 为方便起见, 这个[[示例配置文件 id=f463a4e0-87bb-49e1-b14b-2296e480c0f3]]是GitHub生产环境中使用的`orchestrator`配置.

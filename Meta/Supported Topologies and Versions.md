@@ -27,9 +27,4 @@ Master-master (ring) replication is supported for two master nodes. Topologies o
 
 Galera/XtraDB Cluster replication is not strictly supported: `orchestrator` will not recognize that co-masters in a Galera topology are related. Each such master would appear to `orchestrator` to be the head of its own distinct topology.
 
-支持在同一主机上有多个MySQL实例的复制拓扑结构. 例如, `orchestrator`的测试环境是由四个实例组成的, 它们都运行在同一台机器上，由 MySQLSandbox 提供. 然而, MySQL在复制体和主站之间缺乏信息共享, 使得`orchestrator`无法自上而下地分析拓扑结构, 因为主站不知道其复制体在监听哪些端口. 默认的假设是, 复制体的监听端口与主站相同. 如果在一台机器上有多个实例（并且在同一个网络上）, 这是不可能的. 在这种情况下, 你必须配置你的MySQL实例的`report_host`和`report_port`（[[The importance of report\_host &amp; report\_port id=&#39;8c2265c4-35b6-45a1-a918-e3e1da423371&#39;]]）参数, 并将`orchestrator`的配置参数`DiscoverByShowSlaveHosts`设置为`true`.
-
-
-
-
-
+支持在同一主机上有多个MySQL实例的复制拓扑结构. 例如, `orchestrator`的测试环境是由四个实例组成的, 它们都运行在同一台机器上，由 MySQLSandbox 提供. 然而, MySQL在复制体和主站之间缺乏信息共享, 使得`orchestrator`无法自上而下地分析拓扑结构, 因为主站不知道其复制体在监听哪些端口. 默认的假设是, 复制体的监听端口与主站相同. 如果在一台机器上有多个实例（并且在同一个网络上）, 这是不可能的. 在这种情况下, 你必须配置你的MySQL实例的`report_host`和`report_port`（[The importance of report\_host &amp; report\_port](http://code.openark.org/blog/mysql/the-importance-of-report_host-report_port)）参数, 并将`orchestrator`的配置参数`DiscoverByShowSlaveHosts`设置为`true`.

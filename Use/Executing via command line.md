@@ -1,6 +1,6 @@
 # Executing via command line
 # [Executing via command line](https://github.com/openark/orchestrator/blob/master/docs/executing-via-command-line.md)
-另请参阅[[First Steps with Orchestrator id=&#39;fc302809-a6c8-4508-ad99-f44e4730128b&#39;]].
+另请参阅[First Steps with Orchestrator](Quick%20guides/First%20Steps.md).
 
 `orchestrator`支持两种从命令行运行操作的方式:
 
@@ -132,29 +132,3 @@ orchestrator -c move-below -i 127.0.0.1:22988 -d 127.0.0.1:22990 --debug
 orchestrator -c set-read-only -i 127.0.0.1:22988
 orchestrator -c set-writeable -i 127.0.0.1:22988
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

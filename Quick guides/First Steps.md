@@ -173,7 +173,7 @@ topology2.master.instance.com:3306 [OK,5.6.17-log,STATEMENT,>>]
 
 ```
 #### More
-The above should get you up and running. For more please consult the [[TOC id=&#39;5a4a603f-0cf4-4840-93be-eea27d375334&#39;]]. For CLI commands listing just run:
+The above should get you up and running. For more please consult the [TOC](TOC.md). For CLI commands listing just run:
 
 ```Plain Text
 orchestrator-client -help

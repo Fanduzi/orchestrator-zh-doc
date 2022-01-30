@@ -1,6 +1,6 @@
 # Configuration: Raft
 # [Configuration: raft](https://github.com/openark/orchestrator/blob/master/docs/configuration-raft.md)
-本文讲述如何配置一个[[Orchestrator/raft, consensus cluster id=355cf04c-56ad-4501-943a-39bbbc59e3bf]] 
+本文讲述如何配置一个[[Orchestrator/raft, consensus cluster id=355cf04c-56ad-4501-943a-39bbbc59e3bf]]
 
  假设你要运行一个`3` 节点的`orchestrator/raft` 集群, 你将需要在每个节点进行以下配置:
 
@@ -58,12 +58,12 @@
 
 raft节点将反向代理HTTP请求, `orchestrator`将尝试启发式地计算领导者的URL, 以重定向请求. 如果在NAT后面, 重新路由端口等( If behind NAT, rerouting ports etc.)，`orchestrator`可能无法计算出该URL。你可以配置:
 
-* `"HTTPAdvertise": "scheme://hostname:port"` 
+* `"HTTPAdvertise": "scheme://hostname:port"`
 
-明确指定节点（假设它是领导者）将通过 HTTP API 访问的位置.  例如, 您可以配置:  `"HTTPAdvertise": "http://my.public.hostname:3000"` 
+明确指定节点（假设它是领导者）将通过 HTTP API 访问的位置.  例如, 您可以配置:  `"HTTPAdvertise": "http://my.public.hostname:3000"`
 
 ### Backend DB
-raft模式支持`MySQL`或`SQLite`作为后端数据库. 详见[[Configuration: Backend id=&amp;#39;51d20469-439a-451a-a336-6726cff3a142&amp;#39;]]. 阅读[Orchestrator高可用](Deployment/Orchestrator高可用.md), 了解使用这两种方法的情景、可能性和理由.
+raft模式支持`MySQL`或`SQLite`作为后端数据库. 详见[Configuration: Backend](Setup/配置/Configuration%20%20Backend.md). 阅读[Orchestrator高可用](Deployment/Orchestrator高可用.md), 了解使用这两种方法的情景、可能性和理由.
 
 ### Single raft node setups
 在生产中, 你会希望使用多个raft节点, 如`3`个或`5`个.
@@ -85,9 +85,3 @@ or, alternatively, specify a single node, which is identical to `RaftBind` or�
     "127.0.0.1"
   ],
 ```
-
-
-
-
-
-
