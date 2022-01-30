@@ -13,10 +13,10 @@
 #### Use
 * [Execution](Use/Execution.md): running the `orchestrator` service.
 * [Executing via command line](Use/Executing%20via%20command%20line.md)
-* [[Using the Web interface id=&#39;551296b1-e3c1-4d75-9cfb-638a3ddc3dfd&#39;]]
-* [[Using the web API id=&#39;2ddaa83e-960a-4045-a0c3-e855064bb811&#39;]]: 通过HTTP GET请求实现自动化
-*  Using [[orchestrator-client id=&#39;071296f1-6834-4c7c-849b-73f30c8b0fe2&#39;]]: a no binary/config needed script that wraps API calls
-* [[Scripting samples id=&#39;e7857a23-5d93-471c-b4d4-99444b5034a6&#39;]]
+* [Using the Web interface](Use/Using%20the%20Web%20interface.md)
+* [Using the web API](Use/Using%20the%20web%20API.md): 通过HTTP GET请求实现自动化
+*  Using [orchestrator-client](Use/orchestrator-client.md): a no binary/config needed script that wraps API calls
+* [Scripting samples](Use/Scripting%20samples.md)
 
 #### Deployment
 * [[Orchestrator高可用 id=&#39;ed5e7b21-c508-44b8-817e-d7c782082cf3&#39;]]: making `orchestrator` highly available
