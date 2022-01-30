@@ -1,7 +1,7 @@
 # TOC
 # [Table of Contents](https://github.com/openark/orchestrator/tree/master/docs#introduction)
 #### Introduction
-* [[About id=&#39;a670605d-ff71-44c7-818d-f8550679713e&#39;]]
+* [About id](Introduction/About.md)
 * [[License id=&#39;e41de863-6734-4a21-96e9-42e2a69b8400&#39;]]
 * [[Download id=&#39;2cf392a0-a619-4f9c-a9fa-1f1af7b15301&#39;]]
 * [[Requirements id=&#39;ca71908b-2803-438e-aba0-323fa67b1cca&#39;]]
@@ -57,4 +57,3 @@
 #### Quick guides
 * [[FAQ id=&#39;5ee4e41c-455d-4943-8d56-63233dd3f26b&#39;]]
 * [[First Steps id=&#39;c7073e45-3ad8-4ba8-a48e-3597a2c8c820&#39;]], a quick introduction to `orchestrator`
-
