@@ -74,6 +74,6 @@ For more information, please see
 
 
 #### 配置文件参数详解
-# [配置参数详解-Ⅰ](Setup/配置/配置参数详解-Ⅰ.md)
-# [配置参数详解-Ⅱ](Setup/配置/配置参数详解-Ⅱ.md)
-# [配置参数详解-III](Setup/配置/配置参数详解-III.md)
+* [配置参数详解-Ⅰ](Setup/配置/配置参数详解-Ⅰ.md)
+* [配置参数详解-Ⅱ](Setup/配置/配置参数详解-Ⅱ.md)
+* [配置参数详解-III](Setup/配置/配置参数详解-III.md)
