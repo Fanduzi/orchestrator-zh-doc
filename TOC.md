@@ -19,41 +19,41 @@
 * [Scripting samples](Use/Scripting%20samples.md)
 
 #### Deployment
-* [[Orchestrator高可用 id=&#39;ed5e7b21-c508-44b8-817e-d7c782082cf3&#39;]]: making `orchestrator` highly available
-* [[在生产环境中部署Orchestrator id=&#39;758fdd72-feac-4c95-84ea-86c51c0fafe9&#39;]]
-* [[shard backend模式部署 id=&#39;aa2b3871-6aaa-4826-8dc8-6eda2f56045f&#39;]]
-* [[raft模式部署 id=&#39;ccba5554-290a-4e44-9c9b-ada1fbcb3e1a&#39;]]
+* [Orchestrator高可用](Deployment/Orchestrator高可用.md): making `orchestrator` highly available
+* [在生产环境中部署Orchestrator](Deployment/在生产环境中部署Orchestrator.md)
+* [shard backend模式部署](Deployment/shard%20backend模式部署.md)
+* [raft模式部署](Deployment/raft模式部署.md)
 
 #### Failure detection & recovery
-* [[Failure detection id=&#39;78787f6a-1f80-4d86-a3ba-e1a0e5993eae&#39;]]: how `orchestrator` detects failure, types of failures it can handle
-* [[Topology recovery id=&#39;963e0044-a9d3-4110-9731-3a736cf82441&#39;]]: recovery process, promotion and hooks.
-* [[Key-Value stores id=&#39;df7404f7-5427-4861-af1c-f5a706280b7d&#39;]]: master discovery for your apps
+* [Failure detection](Failure%20detection%20%26%20recovery/Failure%20detection.md): how `orchestrator` detects failure, types of failures it can handle
+* [Topology recovery](Failure%20detection%20%26%20recovery/Topology%20recovery.md): recovery process, promotion and hooks.
+* [Key-Value stores](Failure%20detection%20%26%20recovery/Key-Value%20stores.md): master discovery for your apps
 
 #### Operation
-* [[Status Checks id=&#39;4b6601be-ae51-4f07-a0f6-36b6acbb4ce2&#39;]]
-* [[Tags id=&#39;da6fd9fe-c0aa-403b-a6f3-5ad97d87c0c8&#39;]]
+* [Status Checks](Operation/Status%20Checks.md)
+* [Tags](Operation/Tags.md)
 
 #### Developers
-* [[Understanding CI id=&#39;2e904033-4a72-4c29-86de-d4c1cf7d2647&#39;]]
-* [[Building and testing id=&#39;b967fce4-e108-4fe9-b12f-a790de7d0519&#39;]]
-* [[System test environment id=&#39;42fbcec8-85d6-4313-8019-c482f9368b4c&#39;]]
-* [[Docker id=&#39;7c127815-2807-4786-8308-13ec158af438&#39;]]
-* [[Contributions id=&#39;810c807c-7f64-4918-989e-ed5cc10f29f0&#39;]]
+* [Understanding CI](Developers/Understanding%20CI.md)
+* [Building and testing](Developers/Building%20and%20testing.md)
+* [System test environment](System%20test%20environment.md)
+* [Docker](Developers/Docker.md)
+* [Contributions](Developers/Contributions.md)
 
 #### Various
-* [[Security id=&#39;b9023aa8-211e-4a05-b09d-19e11cef3268&#39;]]
-* [[SSL and TLS id=&#39;f0c1c523-8161-4969-9e64-db5f21f1211c&#39;]]
-* [[Pseudo GTID id=&#39;704951b3-e680-4398-83af-4d478608b808&#39;]]: refactoring and high availability without using GTID.
-* [[Agents id=&#39;cce6fd11-0ddd-4d12-bf7e-2414454d4b32&#39;]]
+* [Security](Various/Security.md)
+* [SSL and TLS](Various/SSL%20and%20TLS.md)
+* [Pseudo GTID](Various/Pseudo%20GTID.md): refactoring and high availability without using GTID.
+* [Agents](Various/Agents.md)
 
 #### Meta
-* [[Risk id=&#39;25653394-5bc5-45d7-b6fd-5ecb1b7d4f74&#39;]]
-* [[Gotchas id=&#39;f5388b06-1268-4c94-95db-6c8489208554&#39;]]
-* [[Supported Topologies and Versions id=&#39;1885103b-b8a6-4fe2-b75d-6ebc8d639941&#39;]]
-* [[Bugs id=&#39;4e0bab51-9e53-41f5-bade-1c3d98af7d13&#39;]]
-* [[Who uses Orchestrator? id=&#39;cb663d66-b167-4319-9938-883f0e7542bb&#39;]]
-* [[Presentations id=&#39;7fee802c-5fe6-4e44-9d0e-bf8b0248bf4f&#39;]]
+* [Risk](Meta/Risk.md)
+* [Gotchas](Meta/Gotchas.md)
+* [Supported Topologies and Versions](Meta/Supported%20Topologies%20and%20Versions.md)
+* [Bugs](Meta/Bugs.md)
+* [Who uses Orchestrator?](Meta/Who%20uses%20Orchestrator%20.md)
+* [Presentations](Meta/Presentations.md)
 
 #### Quick guides
-* [[FAQ id=&#39;5ee4e41c-455d-4943-8d56-63233dd3f26b&#39;]]
-* [[First Steps id=&#39;c7073e45-3ad8-4ba8-a48e-3597a2c8c820&#39;]], a quick introduction to `orchestrator`
+* [FAQ](Quick%20guides/FAQ.md)
+* [First Steps id](Quick%20guides/First%20Steps.md), a quick introduction to `orchestrator`
