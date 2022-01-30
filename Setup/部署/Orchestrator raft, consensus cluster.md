@@ -21,7 +21,7 @@
 这在跨数据中心(DC)的设置中变得非常有用. 假设你设置了三个`orchestrator`节点, 每个都在自己的DC上. 如果一个DC被隔离, 可以保证活动的`orchestrator`节点将是一个有共识的节点, 即从被隔离的DC之外操作( i.e. operates from outside the isolated DC).
 
 ### orchestrator/raft setup technical details 技术细节
-另见: [[orchestrator/raft vs. synchronous replication setup id=&#39;c2179792-b277-42c3-bcc0-46ad2548518b&#39;]]
+另见: [orchestrator/raft vs. synchronous replication setup](Setup/部署/orchestrator%20raft%20vs.%20synchronous%20replication%20setup.md)
 
 #### Service nodes
 你将设置`3`个或`5`个(推荐raft节点数)`orchestrator`节点. 其他数字也是合法的, 但你将希望至少有3个.
@@ -57,7 +57,7 @@ Only the leader is allowed to make changes.
 
 最简单的设置是, 通过在`orchestrator`服务上设置一个`HTTP`代理(如HAProxy), 只将流量路由到领导者.
 
-> 另一种方法请见[[orchestrator-client id=355cf04c-56ad-4501-943a-39bbbc59e3bf]] 
+> 另一种方法请见[[orchestrator-client id=355cf04c-56ad-4501-943a-39bbbc59e3bf]]
 
 * 使用`/api/leader-check` 做健康检查. 在任何时候, 最多只有一个`orchestrator`节点会以`HTTP 200/OK`回复该检查; 其他节点会以`HTTP 404/Not found` 回复.
    * Hint: 你可以使用, 例如, `/api/leader-check/503`是你明确希望获得503响应代码, 或类似的任何其他代码.
@@ -109,7 +109,7 @@ listen orchestrator
 #### orchestrator-client
 实现代理的另一种方法是使用`orchestrator-client`.
 
-[[orchestrator-client id=&#39;071296f1-6834-4c7c-849b-73f30c8b0fe2&#39;]]是一个shell脚本, 通过HTTP API访问`orchestrator` 服务, 并向用户提供一个命令行界面.
+[orchestrator-client](Use/orchestrator-client.md)是一个shell脚本, 通过HTTP API访问`orchestrator` 服务, 并向用户提供一个命令行界面.
 
 可以向`orchestrator-client`提供所有orchestrator API endpoints的完整列表. 在这种情况下, `orchestrator-client`会找出哪个endpoints是leader, 并将请求指向该endpoints.
 
@@ -130,11 +130,11 @@ export ORCHESTRATOR_API="https://orchestrator.proxy:80/api"
 * 在正常情况下, 这三个节点将看到一个或多或少相同的拓扑结构图. 但他们将各自有自己的独立分析.
 * 每个`orchestrator`节点都向自己的专用后端DB服务器(无论是`MySQL`还是`sqlite`)写入数据.
 * `orchestrator`节点间的通信非常少. 它们不共享发现信息(因为它们各自独立发现). 相反, leader与其他节点共享被拦截的用户指令, 例如:
-   * `begin-downtime` 
-   * `register-candidate` 
+   * `begin-downtime`
+   * `register-candidate`
    * etc.
 
-The *leader* will also educate its followers about ongoing failovers. 
+The *leader* will also educate its followers about ongoing failovers.
 
 > 译者注: 就是说failover只能leader做, leader做failover时也会告诉followers呗.
 
@@ -142,7 +142,7 @@ The *leader* will also educate its followers about ongoing failovers.
 
 * 所有用户变更必须通过leader, 尤其是通过`HTTP API`. 你不能直接操作后台数据库, 因为这样的改变不会被发布到其他节点.
 * 因此, 在`orchestrator/raft`上, 人们不能在命令行模式下使用`orchestrator` 命令: 当raft模式被启用时, 试图运行orchestrator cli将被拒绝. 我们正在进行的一些开发工作是允许一些命令通过cli运行.
-* 有一个实用脚本, 即[[orchestrator-client id=&#39;071296f1-6834-4c7c-849b-73f30c8b0fe2&#39;]], 它提供了与`orchestrator`命令类似的接口, 并使用和操作`HTTP API` .
+* 有一个实用脚本, 即[orchestrator-client](Use/orchestrator-client.md), 它提供了与`orchestrator`命令类似的接口, 并使用和操作`HTTP API` .
 * 只需在`orchestrator`服务节点上安装`orchestrator`二进制文件即可, 无需在其他地方安装. 而`orchestrator-client`可以安装在您希望安装的任何地方.
 * 单个`orchestrator`节点的故障将不会影响`orchestrator`的可用性. 在`3`个节点的集群中, 最多在只能有一个`orchestrator`节点发生故障. 在`5`个节点的设置中, 允许`2`个节点发生故障.
 * 如果没有后端数据库, `orchestrator`节点将无法运行. 对于使用 `sqlite` 后端, 这是微不足道的(感觉意思是使用sqlite几乎不用担心数据库故障引发orchestrator panic), 因为 `sqlite` 嵌入在 `orchestrator`中一起运行.  如果使用 `MySQL` 作为后端数据库,  假设在一段时间内`orchestrator`无法连接到后端 DB, 那么 `orchestrator` 服务将退出.
@@ -205,6 +205,3 @@ DC3中的从库当选为new master.
 
 * 故障检测需要法定人数的同意（即`DeadMaster`需要由多个`orchestrator`节点进行分析）, 以便启动故障转移/恢复.
 * 支持探测(probing)的共享（与上述相互排斥）: 领导者将在所有节点之间划分要探测的服务器列表. 有可能按数据中心划分. 这将减少探测负载（每个MySQL服务器将由一个节点而不是所有节点探测）. 所有协调器节点将看到相同的图片, 而不是独立的视图.
-
-
-

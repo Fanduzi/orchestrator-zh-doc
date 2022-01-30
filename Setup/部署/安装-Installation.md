@@ -1,6 +1,6 @@
 # 安装-Installation
 # [Installation](https://github.com/openark/orchestrator/blob/master/docs/install.md)
-关于生产环境部署, 见[[在生产环境中部署Orchestrator id=&#39;758fdd72-feac-4c95-84ea-86c51c0fafe9&#39;]]. 下面的文字将引导你通过手动方式安装和必要的配置来使其工作.
+关于生产环境部署, 见[在生产环境中部署Orchestrator](Deployment/在生产环境中部署Orchestrator.md). 下面的文字将引导你通过手动方式安装和必要的配置来使其工作.
 
 以下内容假设您将使用同一台机器来运行`orchestrator`和后端MySQL数据库. 如果不是, 请用适当的主机名替换`127.0.0.1`. 将`orch_backend_password`替换为您自己的密码.
 
@@ -62,7 +62,7 @@ GRANT SUPER, PROCESS, REPLICATION SLAVE, RELOAD ON *.* TO 'orchestrator'@'orch_h
 GRANT SELECT ON mysql.slave_master_info TO 'orchestrator'@'orch_host';
 GRANT SELECT ON ndbinfo.processes TO 'orchestrator'@'orch_host'; -- Only for NDB Cluster
 ```
-> `REPLICATION SLAVE` 对于执行`SHOW SLAVE HOSTS` 和 扫描二进制日志以支持[[Pseudo GTID id=&#39;704951b3-e680-4398-83af-4d478608b808&#39;]]是必须的,
+> `REPLICATION SLAVE` 对于执行`SHOW SLAVE HOSTS` 和 扫描二进制日志以支持[Pseudo GTID](Various/Pseudo%20GTID.md)是必须的,
 
 > `RELOAD` 对于执行`RESET SLAVE` 是必须的
 

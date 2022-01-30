@@ -8,7 +8,7 @@
 
 > Should orchestrator take upon itself to apply MySQL master promotion: set read\_only=0, detach replication, etc.
 
-另见[[Configuration: Recovery id=&#39;1e244518-4a10-46c4-81b5-2da1c8998295&#39;]]
+另见[Configuration: Recovery](Setup/配置/Configuration%20%20Recovery.md)
 
 ## PreventCrossDataCenterMasterFailover
 类型: `bool`
@@ -441,7 +441,7 @@ PR [https://github.com/openark/orchestrator/pull/1100](https://github.com/openar
 
 > If true, semi-sync replicas will be enabled/disabled to match the wait count in the desired priority order; this applies to LockedSemiSyncMaster and MasterWithTooManySemiSyncReplicas
 
-另见[[Semi-sync replicas (rpl\_semi\_sync\_slave\_enabled) id=b169c092-dcf3-4fe9-87ce-8cbe95b331e1]] 和 [[Failure detection id=&#39;78787f6a-1f80-4d86-a3ba-e1a0e5993eae&#39;]]
+另见[[Semi-sync replicas (rpl\_semi\_sync\_slave\_enabled) id=b169c092-dcf3-4fe9-87ce-8cbe95b331e1]] 和 [Failure detection](Failure%20detection%20%26%20recovery/Failure%20detection.md)
 
 ## RecoverLockedSemiSyncMaster
 类型: `bool`
@@ -452,7 +452,7 @@ PR [https://github.com/openark/orchestrator/pull/1100](https://github.com/openar
 
 > If true, orchestrator will recover from a LockedSemiSync state by enabling semi-sync on replicas to match the wait count; this behavior can be overridden by EnforceExactSemiSyncReplicas
 
-另见[[Semi-sync replicas (rpl\_semi\_sync\_slave\_enabled) id=b169c092-dcf3-4fe9-87ce-8cbe95b331e1]] 和 [[Failure detection id=&#39;78787f6a-1f80-4d86-a3ba-e1a0e5993eae&#39;]]
+另见[[Semi-sync replicas (rpl\_semi\_sync\_slave\_enabled) id=b169c092-dcf3-4fe9-87ce-8cbe95b331e1]] 和 [Failure detection](Failure%20detection%20%26%20recovery/Failure%20detection.md)
 
 ## ReasonableLockedSemiSyncMasterSeconds
 类型: `uint`
@@ -468,5 +468,5 @@ PR [https://github.com/openark/orchestrator/pull/1100](https://github.com/openar
         this.ReasonableLockedSemiSyncMasterSeconds = uint(this.ReasonableReplicationLagSeconds)
     }
 ```
-另见[[Semi-sync replicas (rpl\_semi\_sync\_slave\_enabled) id=b169c092-dcf3-4fe9-87ce-8cbe95b331e1]] 和 [[Failure detection id=&#39;78787f6a-1f80-4d86-a3ba-e1a0e5993eae&#39;]]
+另见[[Semi-sync replicas (rpl\_semi\_sync\_slave\_enabled) id=b169c092-dcf3-4fe9-87ce-8cbe95b331e1]] 和 [Failure detection](Failure%20detection%20%26%20recovery/Failure%20detection.md)
 

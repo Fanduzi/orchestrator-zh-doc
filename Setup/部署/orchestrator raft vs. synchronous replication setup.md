@@ -39,7 +39,7 @@
 ### 注意事项
 以下是在这两种部署方法中选择的考虑因素:
 
-* 你只有一个单一的数据中心(DC): 选择shared DB(MGR/PXC)或甚至更简单的部署方式(参考[[Orchestrator高可用 id=&#39;ed5e7b21-c508-44b8-817e-d7c782082cf3&#39;]])
+* 你只有一个单一的数据中心(DC): 选择shared DB(MGR/PXC)或甚至更简单的部署方式(参考[Orchestrator高可用](Deployment/Orchestrator高可用.md))
 * 你对Galera/XtraDB Cluster/InnoDB Cluster很熟悉, 并且有自动化部署和维护它们的能力: 挑选shared DB.
 * 你有高延迟的跨DC网络: 选择`orchestrator/raft`.
 * 你不想为`orchestrator` 使用MySQL: choose `orchestrator/raft` with `SQLite` backend.

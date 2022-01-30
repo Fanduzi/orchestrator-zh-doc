@@ -42,7 +42,7 @@
 * srv-a:2181,srv-b:12181,srv-c:2181
 
 ### Consul specific
-关于Consul的具体设置, 见[[Key-Value stores id=&#39;df7404f7-5427-4861-af1c-f5a706280b7d&#39;]] .
+关于Consul的具体设置, 见[Key-Value stores](Failure%20detection%20%26%20recovery/Key-Value%20stores.md) .
 
 
 

@@ -16,7 +16,7 @@
 众所周知, `orchestrator` 的整体故障检测方法在生产中非常可靠.
 
 ### Detection and recovery 探测和恢复
-检测并不总是导致[[Topology recovery id=&#39;963e0044-a9d3-4110-9731-3a736cf82441&#39;]]. 有些情况下, 恢复是不可取的
+检测并不总是导致[Topology recovery](Failure%20detection%20%26%20recovery/Topology%20recovery.md). 有些情况下, 恢复是不可取的
 
 > Detection does not always lead to [recovery](https://github.com/openark/orchestrator/blob/master/docs/topology-recovery.md). There are scenarios where a recovery is undesired:
 
@@ -33,7 +33,7 @@
 
 在理想的情况下, 检测到故障后立即恢复. 在其他情况下, such as blocked recoveries, 恢复可能在检测后的许多分钟后进行.
 
-检测是独立于恢复的, 并且总是被启用.` OnFailureDetectionProcesses`钩子在每次检测时执行, 详见[[Configuration: Failure detection id=&#39;4124be88-14f6-4c3a-87c8-f4bb76e0b692&#39;]]
+检测是独立于恢复的, 并且总是被启用.` OnFailureDetectionProcesses`钩子在每次检测时执行, 详见[Configuration: Failure detection](Setup/配置/Configuration%20%20Failure%20detection.md)
 
 ### Failure detection scenarios 故障检测场景
 请注意以下潜在故障列表:
@@ -123,7 +123,7 @@
 1. 主库启用了半同步(`rpl_semi_sync_master_enabled=1`)
 > Master is running with semi-sync enabled (`rpl_semi_sync_master_enabled=1`)
 2. 返回ack的从库数量小于`rpl_semi_sync_master_wait_for_slave_count`
-> Number of connected semi-sync replicas falls short of expected `rpl_semi_sync_master_wait_for_slave_count` 
+> Number of connected semi-sync replicas falls short of expected `rpl_semi_sync_master_wait_for_slave_count`
 3. `rpl_semi_sync_master_timeout` 的值足够高, 主库的写入会被阻塞, 不会退化到异步复制.
 > `rpl_semi_sync_master_timeout` is high enough such that master locks writes and does not fall back to asynchronous replication
 
@@ -174,4 +174,4 @@
 * Web API: `/api/replication-analysis`
 * Web: `/web/clusters-analysis/` page (`Clusters`->`Failure analysis`). 这提供了一个不完整的问题列表, 只突出了可操作的问题.
 
-Read next: [[Topology recovery id=&#39;963e0044-a9d3-4110-9731-3a736cf82441&#39;]]
+Read next: [Topology recovery](Failure%20detection%20%26%20recovery/Topology%20recovery.md)

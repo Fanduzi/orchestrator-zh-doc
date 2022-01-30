@@ -2,9 +2,9 @@
 # [Configuration: failure detection](https://github.com/openark/orchestrator/blob/master/docs/configuration-failure-detection.md)
 `orchestrator`将始终检测您的拓扑结构的故障. 作为一个配置问题, 您可以设置轮询频率和具体方式, 以便`orchestrator`在检测到故障时通知您.
 
->  [[Failure detection id=&#39;78787f6a-1f80-4d86-a3ba-e1a0e5993eae&#39;]]
+>  [Failure detection](Failure%20detection%20%26%20recovery/Failure%20detection.md)
 
-恢复将在[[Configuration: Recovery id=&#39;1e244518-4a10-46c4-81b5-2da1c8998295&#39;]]中讨论
+恢复将在[Configuration: Recovery](Setup/配置/Configuration%20%20Recovery.md)中讨论
 
 ```yaml
 {
@@ -25,7 +25,7 @@
   ],
 }
 ```
-有许多神奇的变量(如上面的`{failureCluster}`), 你可以发送给你的外部钩子. 完整列表请见[[Topology recovery id=&#39;963e0044-a9d3-4110-9731-3a736cf82441&#39;]]
+有许多神奇的变量(如上面的`{failureCluster}`), 你可以发送给你的外部钩子. 完整列表请见[Topology recovery](Failure%20detection%20%26%20recovery/Topology%20recovery.md)
 
 ### MySQL configuration
 由于故障检测使用MySQL拓扑结构本身作为信息来源, 因此建议你设置你的MySQL复制, 以便错误将被清楚地显示或快速地缓解.

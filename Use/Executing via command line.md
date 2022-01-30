@@ -7,7 +7,7 @@
 * 使用`orchestrator` 二进制文件(即orchestrator命令, 也是本文的主题)
    * 你将在运维/应用服务器上部署`orchestrator` (命令), 但不将其作为服务运行
    * 您将为`orchestrator`二进制文件部署配置文件, 以便能够连接到(orchestrator)后端数据库.
-* 使用[[orchestrator-client id=&#39;071296f1-6834-4c7c-849b-73f30c8b0fe2&#39;]]脚本.
+* 使用[orchestrator-client](Use/orchestrator-client.md)脚本.
    * 你只需要在运维/应用服务器上部署`orchestrator-client` 脚本即可.
    * 你即不需要配置文件, 也不需要二进制文件
 >  You will not need any config file nor binaries.

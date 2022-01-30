@@ -8,7 +8,7 @@
   "ListenAddress": ":3000",
 }
 ```
-你可以选择`MySQL`后端或`SQLite`后端. 参见[[Orchestrator高可用 id=&#39;ed5e7b21-c508-44b8-817e-d7c782082cf3&#39;]], 了解使用这两种方式的场景、可能性和原因。
+你可以选择`MySQL`后端或`SQLite`后端. 参见[Orchestrator高可用](Deployment/Orchestrator高可用.md), 了解使用这两种方式的场景、可能性和原因。
 
 ## MySQL backend
 你需要设置提供给`orchestrator` 使用的库名和用户密码:

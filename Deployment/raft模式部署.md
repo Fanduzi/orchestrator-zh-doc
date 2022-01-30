@@ -1,11 +1,11 @@
 # raft模式部署
 # [Orchestrator deployment: raft](https://github.com/openark/orchestrator/blob/master/docs/deployment-raft.md)
-本文描述了部署[[Orchestrator/raft, consensus cluster id=&#39;355cf04c-56ad-4501-943a-39bbbc59e3bf&#39;]]的方法.
+本文描述了部署[Orchestrator/raft, consensus cluster](Setup/部署/Orchestrator%20raft%2C%20consensus%20cluster.md)的方法.
 
-这篇文的完善了[[在生产环境中部署Orchestrator id=&#39;758fdd72-feac-4c95-84ea-86c51c0fafe9&#39;]].
+这篇文的完善了[在生产环境中部署Orchestrator](Deployment/在生产环境中部署Orchestrator.md).
 
 ### Backend DB
-你可以选择使用MySQL和SQLite. See[[configuration-backend id=&#39;51d20469-439a-451a-a336-6726cff3a142&#39;]]
+你可以选择使用MySQL和SQLite. See[configuration-backend](Setup/配置/Configuration%20%20Backend.md)
 
 * For MySQL:
    * 后端数据库将是独立的. No replication setup. 每个`orchestrator`节点将与自己专用的后端数据库交互.
@@ -21,7 +21,7 @@
 
 ### What to deploy: service
 * 将`orchestrator`服务部署到service boxes上. 正如所建议的, 您可能希望将`orchestrator`服务和`MySQL`服务放在同一个机器上. If using `SQLite` there's nothing else to do.
-* 考虑在服务盒(service boxes)之上增加一个代理(proxy); 代理将把所有流量重定向到leader node(这里指的是`orchestrator` 服务leader节点). 有一个而且只有一个领导者节点, 状态检查的端点是`/api/leader-check` . 
+* 考虑在服务盒(service boxes)之上增加一个代理(proxy); 代理将把所有流量重定向到leader node(这里指的是`orchestrator` 服务leader节点). 有一个而且只有一个领导者节点, 状态检查的端点是`/api/leader-check` .
    * 客户端将只与健康的raft节点交互.
       * 最简单的方法就是只与leader互动. 设置代理proxy是确保这一点的一种方法. See [[Proxy: leader id=355cf04c-56ad-4501-943a-39bbbc59e3bf]] .
       * 否则，所有健康的raft节点将反向代理您的请求到leader. See [[Proxy: healthy raft nodes id=355cf04c-56ad-4501-943a-39bbbc59e3bf]] .
@@ -33,7 +33,7 @@
 
 * 直接与HTTP API交互
    * 你只能和leader互动. 实现这一点的一个好方法是使用代理.
-* 使用[[orchestrator-client id=&#39;071296f1-6834-4c7c-849b-73f30c8b0fe2&#39;]]脚本([[orchestrator-client id=&#39;071296f1-6834-4c7c-849b-73f30c8b0fe2&#39;]]本质是一个shell脚本).
+* 使用[orchestrator-client](Use/orchestrator-client.md)脚本([orchestrator-client](Use/orchestrator-client.md)本质是一个shell脚本).
    * 将`orchestrator-client`部署在你希望与`orchestrator`交互的任何盒子上.
    * Create and edit `/etc/profile.d/orchestrator-client.sh` on those boxes to read:
 
@@ -114,16 +114,3 @@ Such that the backend database is completely empty/missing. 分配/重新分配�
 * 在`node1` 重启`orchestrator` .
 * 在`node2` 重启`orchestrator` .
    * 这时, 所有三个节点应该形成一个快乐的集群
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -57,3 +57,8 @@
 #### Quick guides
 * [FAQ](Quick%20guides/FAQ.md)
 * [First Steps id](Quick%20guides/First%20Steps.md), a quick introduction to `orchestrator`
+
+#### 配置文件参数详解
+* [配置参数详解-Ⅰ](Setup/配置/配置参数详解-Ⅰ.md)
+* [配置参数详解-Ⅱ](Setup/配置/配置参数详解-Ⅱ.md)
+* [配置参数详解-III](Setup/配置/配置参数详解-III.md)

@@ -4,22 +4,22 @@
 
 `orchestrator` 支持:
 
-* [[Automated recovery id=963e0044-a9d3-4110-9731-3a736cf82441]](takes action on unexpected failures) 
-* [[Graceful master promotion 在线切换 id=963e0044-a9d3-4110-9731-3a736cf82441]] 
-* [[Manual recovery id=963e0044-a9d3-4110-9731-3a736cf82441]] 
-* [[Manual, forced/panic failovers. id=963e0044-a9d3-4110-9731-3a736cf82441]] 
+* [[Automated recovery id=963e0044-a9d3-4110-9731-3a736cf82441]](takes action on unexpected failures)
+* [[Graceful master promotion 在线切换 id=963e0044-a9d3-4110-9731-3a736cf82441]]
+* [[Manual recovery id=963e0044-a9d3-4110-9731-3a736cf82441]]
+* [[Manual, forced/panic failovers. id=963e0044-a9d3-4110-9731-3a736cf82441]]
 
 ## Requirements
 要运行任何类型的故障转移, 您的拓扑必须支持:
 
 * Oracle GTID (with `MASTER_AUTO_POSITION=1`)
 * MariaDB GTID
-* [[Pseudo GTID id=&#39;704951b3-e680-4398-83af-4d478608b808&#39;]]
+* [Pseudo GTID](Various/Pseudo%20GTID.md)
 * Binlog Servers
 
 更多细节见[[MySQL Configuration id=1e244518-4a10-46c4-81b5-2da1c8998295]]
 
-自动恢复是可以选的, 请参阅 [[Configuration: Recovery id=&#39;1e244518-4a10-46c4-81b5-2da1c8998295&#39;]]
+自动恢复是可以选的, 请参阅 [Configuration: Recovery](Setup/配置/Configuration%20%20Recovery.md)
 
 ### What's in a recovery?
 基于[[Failure detection id=96b41447-f291-4f3e-82d3-381d6eea9fbc]], 一连串的事件构成了一个恢复过程:
@@ -311,11 +311,11 @@ Promotion rules在一小时后失效.  That's the dynamic nature of `orchestrato
 ```bash
 */2 * * * * root "/usr/bin/perl -le 'sleep rand 10' && /usr/bin/orchestrator-client -c register-candidate -i this.hostname.com --promotion-rule prefer"
 ```
-此设置来自生产环境. cron entries通过`puppet` 更新来设置新的`promotion_rule` . 一个server可能现在是`prefer`的, 但5分钟后就是`prefer_not` 
+此设置来自生产环境. cron entries通过`puppet` 更新来设置新的`promotion_rule` . 一个server可能现在是`prefer`的, 但5分钟后就是`prefer_not`
 
 > 这取决于你们公司自己的选主逻辑, 如, prefer的服务器要是是例行维护了, 那么就要更改`promotion_rule`
 
-你可以整合你自己的服务发现方法、你自己的脚本, 以提供你最新的`promotion_rule` 
+你可以整合你自己的服务发现方法、你自己的脚本, 以提供你最新的`promotion_rule`
 
 ## Downtime
 所有的failure/recovery情况都得到了分析. 然而, 也考虑到了实例的停机状态.
@@ -332,9 +332,9 @@ an instance. An instance can be downtimed (via `orchestrator-client -c begin-dow
 请注意, 手动恢复(例如 `orchestrator-client -c recover`)会覆盖停机时间.
 
 ## Recovery hooks
-`orchestrator`支持钩子--通过恢复过程调用的外部脚本. 这些是通过shell, 特别是bash调用的命令数组. 参见恢复配置中的[[Hooks id=1e244518-4a10-46c4-81b5-2da1c8998295]] 
+`orchestrator`支持钩子--通过恢复过程调用的外部脚本. 这些是通过shell, 特别是bash调用的命令数组. 参见恢复配置中的[[Hooks id=1e244518-4a10-46c4-81b5-2da1c8998295]]
 
-* `OnFailureDetectionProcesses`: described in [[Failure detection id=&#39;78787f6a-1f80-4d86-a3ba-e1a0e5993eae&#39;]].
+* `OnFailureDetectionProcesses`: described in [Failure detection](Failure%20detection%20%26%20recovery/Failure%20detection.md).
 * `PreGracefulTakeoverProcesses`: 在old master进入只读状态之前, 在`graceful-master-takeover`命令中调用.
 * `PreFailoverProcesses`
 * `PostMasterFailoverProcesses`

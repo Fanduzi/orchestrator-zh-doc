@@ -4,7 +4,7 @@
 
 > `orchestrator` will identify magic hints in the binary logs, making it able to manipulate a non-GTID topology as if it had GTID, including relocation of replicas, smart failovers end more.
 
-另见[[Pseudo GTID id=&#39;704951b3-e680-4398-83af-4d478608b808&#39;]]
+另见[Pseudo GTID](Various/Pseudo%20GTID.md)
 
 ### Automated Pseudo-GTID injection
 `orchestrator` 可以为你注入Pseudo-GTID条目, 省去你的麻烦:
