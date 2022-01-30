@@ -1,18 +1,18 @@
 # TOC
 # [Table of Contents](https://github.com/openark/orchestrator/tree/master/docs#introduction)
 #### Introduction
-* [About id](Introduction/About.md)
-* [[License id=&#39;e41de863-6734-4a21-96e9-42e2a69b8400&#39;]]
-* [[Download id=&#39;2cf392a0-a619-4f9c-a9fa-1f1af7b15301&#39;]]
-* [[Requirements id=&#39;ca71908b-2803-438e-aba0-323fa67b1cca&#39;]]
+* [About](Introduction/About.md)
+* [License](Introduction/License.md)
+* [Download](Introduction/Download.md)
+* [Requirements](Introduction/Requirements.md)
 
 #### Setup
-* [[安装-Installation id=&#39;f61abf3c-7640-4ccd-b4fb-4cd029dc4327&#39;]]: installing the service/binary
-* [[Configuration id=&#39;3b1f49ca-5b5c-49ae-86cb-8f695315e704&#39;]]: breakdown of major configuration variables by topic.
+* [安装-Installation](Setup/部署/安装-Installation.md): installing the service/binary
+* [Configuration](Setup/配置/Configuration.md): breakdown of major configuration variables by topic.
 
 #### Use
-* [[Execution id=&#39;74012352-fb71-4282-95dd-0694b470d452&#39;]]: running the `orchestrator` service.
-* [[Executing via command line id=&#39;d484851b-6253-4426-a31b-0bd2c21062c0&#39;]]
+* [Execution](Use/Execution.md): running the `orchestrator` service.
+* [Executing via command line](Use/Executing via command line.md)
 * [[Using the Web interface id=&#39;551296b1-e3c1-4d75-9cfb-638a3ddc3dfd&#39;]]
 * [[Using the web API id=&#39;2ddaa83e-960a-4045-a0c3-e855064bb811&#39;]]: 通过HTTP GET请求实现自动化
 *  Using [[orchestrator-client id=&#39;071296f1-6834-4c7c-849b-73f30c8b0fe2&#39;]]: a no binary/config needed script that wraps API calls
