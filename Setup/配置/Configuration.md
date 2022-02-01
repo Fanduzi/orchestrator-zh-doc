@@ -20,7 +20,7 @@ Use the following small steps to configure `orchestrator`:
 * [Configuration: Recovery](Setup/配置/Configuration%20%20Recovery.md)
 * [Configuration: Raft](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Setup/%E9%85%8D%E7%BD%AE/Configuration%20%20Raft.md) configure a[[Orchestrator/raft, consensus cluster id=355cf04c-56ad-4501-943a-39bbbc59e3bf]]for high availability
 
-*  Security: See[Security](Various/Security.md)section.
+*  Security: See[Security](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Various/Security.md)section.
 * [Configuration: Key-Value stores](Setup/配置/Configuration%20%20Key-Value%20stores.md)configure and use key-value stores for master discovery.
 * [Orchestrator configuration in larger environments](Setup/配置/Orchestrator%20configuration%20in%20larger%20environments.md)
 
