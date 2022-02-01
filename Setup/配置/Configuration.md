@@ -22,7 +22,7 @@ Use the following small steps to configure `orchestrator`:
 
 *  Security: See[Security](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Various/Security.md)section.
 * [Configuration: Key-Value stores](Setup/配置/Configuration%20%20Key-Value%20stores.md)configure and use key-value stores for master discovery.
-* [Orchestrator configuration in larger environments](Setup/配置/Orchestrator%20configuration%20in%20larger%20environments.md)
+* [Orchestrator configuration in larger environments](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Setup/%E9%85%8D%E7%BD%AE/Orchestrator%20configuration%20in%20larger%20environments.md)
 
 ### Configuration sample file
 为方便起见, 这个[[示例配置文件 id=f463a4e0-87bb-49e1-b14b-2296e480c0f3]]是GitHub生产环境中使用的`orchestrator`配置.

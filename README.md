@@ -58,12 +58,12 @@ For more information, please see
 * [Security](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Various/Security.md)
 * [SSL and TLS](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Various/SSL%20and%20TLS.md)
 * [Pseudo GTID](Various/Pseudo%20GTID.md): refactoring and high availability without using GTID.
-* [Agents](Various/Agents.md)
+* [Agents](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Various/Agents.md)
 
 #### Meta
 * [Risk](Meta/Risk.md)
 * [Gotchas](Meta/Gotchas.md)
-* [Supported Topologies and Versions](Meta/Supported%20Topologies%20and%20Versions.md)
+* [Supported Topologies and Versions](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Meta/Supported%20Topologies%20and%20Versions.md)
 * [Bugs](Meta/Bugs.md)
 * [Who uses Orchestrator?](Meta/Who%20uses%20Orchestrator%20.md)
 * [Presentations](Meta/Presentations.md)
