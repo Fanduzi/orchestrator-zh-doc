@@ -42,7 +42,7 @@
 
 #### Various
 * [Security](Various/Security.md)
-* [SSL and TLS](Various/SSL%20and%20TLS.md)
+* [SSL and TLS](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Various/SSL%20and%20TLS.md)
 * [Pseudo GTID](Various/Pseudo%20GTID.md): refactoring and high availability without using GTID.
 * [Agents](Various/Agents.md)
 
