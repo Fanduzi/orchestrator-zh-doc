@@ -4,10 +4,10 @@
 
 `orchestrator` 支持:
 
-* [[Automated recovery id=963e0044-a9d3-4110-9731-3a736cf82441]](takes action on unexpected failures)
-* [[Graceful master promotion 在线切换 id=963e0044-a9d3-4110-9731-3a736cf82441]]
-* [[Manual recovery id=963e0044-a9d3-4110-9731-3a736cf82441]]
-* [[Manual, forced/panic failovers. id=963e0044-a9d3-4110-9731-3a736cf82441]]
+* [Automated recovery](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Failure%20detection%20%26%20recovery/Topology%20recovery.md#automated-recovery)(takes action on unexpected failures)
+* [Graceful master promotion 在线切换](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Failure%20detection%20%26%20recovery/Topology%20recovery.md#graceful-master-promotion-%E5%9C%A8%E7%BA%BF%E5%88%87%E6%8D%A2)
+* [Manual recovery](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Failure%20detection%20%26%20recovery/Topology%20recovery.md#manual-recovery-%E6%89%8B%E5%8A%A8%E6%81%A2%E5%A4%8D)
+* [Manual, forced/panic failovers.](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Failure%20detection%20%26%20recovery/Topology%20recovery.md#manual-forced-failover-%E6%89%8B%E5%8A%A8%E5%BC%BA%E5%88%B6failover)
 
 ## Requirements
 要运行任何类型的故障转移, 您的拓扑必须支持:

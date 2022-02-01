@@ -12,7 +12,7 @@ Use the following small steps to configure `orchestrator`:
 
 * [Configuration: Backend](Setup/配置/Configuration%20%20Backend.md)
 * [[Configuration: Basic Discovery](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Setup/%E9%85%8D%E7%BD%AE/Configuration%20%20Basic%20Discovery.md)
-* [Configuration: Discovery, name resolving](Setup/配置/Configuration%20%20Discovery%2C%20name%20resolving.md)
+* [Configuration: Discovery, name resolving](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Setup/%E9%85%8D%E7%BD%AE/Configuration%20%20Discovery%2C%20name%20resolving.md)
 * [[Configuration: Discovery, classifying servers](Setup/配置/Configuration%20%20Discovery%2C%20classifying%20servers.md)
 * [Configuration: Discovery, Pseudo-GTID](Setup/配置/Configuration%20%20Discovery%2C%20Pseudo-GTID.md)
 * [Configuration: Topology control](Setup/配置/Configuration%20%20Topology%20control.md)
