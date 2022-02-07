@@ -19,7 +19,7 @@
 ### Full listing
 完整的接口清单请见[api.go](https://github.com/openark/orchestrator/blob/master/go/http/api.go)(向下滚动到`RegisterRequests`)
 
-你可能还想看看[orchestrator-client](Use/orchestrator-client.md)([source code](https://github.com/openark/orchestrator/blob/master/resources/bin/orchestrator-client)), 看看command line interface是如何转化为API调用的. 或者, 直接使用[orchestrator-client](Use/orchestrator-client.md)作为你的API客户端, 这就是它的作用.
+你可能还想看看[orchestrator-client](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Use/orchestrator-client.md)([source code](https://github.com/openark/orchestrator/blob/master/resources/bin/orchestrator-client)), 看看command line interface是如何转化为API调用的. 或者, 直接使用[orchestrator-client](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Use/orchestrator-client.md)作为你的API客户端, 这就是它的作用.
 
 ### Instance JSON breakdown
 许多 API 调用返回 *instance objects*实例对象, 描述单个 MySQL server. 此示例之后是字段细分
@@ -113,7 +113,7 @@
 * `ReplicationSQLThreadRuning`: 从`SHOW SLAVE STATUS`的`Slave_SQL_Running`直接映射.
 * `ReplicationIOThreadRuning`: 从`SHOW SLAVE STATUS`的`Slave_IO_Running`直接映射.
 * `HasReplicationFilters`: 如果设置了复制过滤规则, 此值为true.
-* `SupportsOracleGTID`: true if cnfigured with `gtid_mode` (Oracle MySQL >= 5.6) 
+* `SupportsOracleGTID`: true if cnfigured with `gtid_mode` (Oracle MySQL >= 5.6)
 > 有点歧义, 是说`gtid_mode` 为ON吗? 需要看代码
 * `UsingOracleGTID`: true if replica replicates via Oracle GTID
 * `UsingMariaDBGTID`:  true if replica replicates via MariaDB GTID
@@ -126,7 +126,7 @@
 > 应该就是Relay\_Log\_File 和 Relay\_Log\_Pos. 需要看代码
 * `LastSQLError`: `SHOW SLAVE STATUS` 中的`Last_SQL_Error` .
 * `LastIOError`:  `SHOW SLAVE STATUS` 中的`Last_IO_Error` .
-* `SecondsBehindMaster`:  从`SHOW SLAVE STATUS`的`Seconds_Behind_Master`的直接映射 `"Valid": false`表示`NULL` 
+* `SecondsBehindMaster`:  从`SHOW SLAVE STATUS`的`Seconds_Behind_Master`的直接映射 `"Valid": false`表示`NULL`
 > 如sql\_thread停止后, Seconds\_Behind\_Master: NULL
 * `SQLDelay`: change master语句中的 `MASTER_DELAY` .
 * `ExecutedGtidSet`: if using Oracle GTID, the executed GTID set

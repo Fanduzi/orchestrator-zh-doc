@@ -33,7 +33,7 @@
 
 在理想的情况下, 检测到故障后立即恢复. 在其他情况下, such as blocked recoveries, 恢复可能在检测后的许多分钟后进行.
 
-检测是独立于恢复的, 并且总是被启用.` OnFailureDetectionProcesses`钩子在每次检测时执行, 详见[Configuration: Failure detection](Setup/配置/Configuration%20%20Failure%20detection.md)
+检测是独立于恢复的, 并且总是被启用.` OnFailureDetectionProcesses`钩子在每次检测时执行, 详见[Configuration: Failure detection](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Setup/配置/Configuration%20%20Failure%20detection.md)
 
 ### Failure detection scenarios 故障检测场景
 请注意以下潜在故障列表:
@@ -174,4 +174,4 @@
 * Web API: `/api/replication-analysis`
 * Web: `/web/clusters-analysis/` page (`Clusters`->`Failure analysis`). 这提供了一个不完整的问题列表, 只突出了可操作的问题.
 
-Read next: [Topology recovery](Failure%20detection%20%26%20recovery/Topology%20recovery.md)
+Read next: [Topology recovery](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Failure%20detection%20%26%20recovery/Topology%20recovery.md)

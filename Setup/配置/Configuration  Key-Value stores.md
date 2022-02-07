@@ -17,7 +17,7 @@
 `KVClusterMasterPrefix` is the prefix to use for master discovery entries. 例如, 您的集群别名是 `mycluster` 并且主库主机名是 `some.host-17.com` 那么您会看到一个条目, 其中:
 
 * Key为`mysql/master/mycluster`
-* Value为`some.host-17.com:3306` 
+* Value为`some.host-17.com:3306`
 
 注意: 在 ZooKeeper 上, 键将自动以 `/` 为前缀.
 
@@ -42,7 +42,4 @@
 * srv-a:2181,srv-b:12181,srv-c:2181
 
 ### Consul specific
-关于Consul的具体设置, 见[Key-Value stores](Failure%20detection%20%26%20recovery/Key-Value%20stores.md) .
-
-
-
+关于Consul的具体设置, 见[Key-Value stores](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Failure%20detection%20%26%20recovery/Key-Value%20stores.md) .

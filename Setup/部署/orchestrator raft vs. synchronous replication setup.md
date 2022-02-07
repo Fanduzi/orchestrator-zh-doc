@@ -39,7 +39,7 @@
 ### 注意事项
 以下是在这两种部署方法中选择的考虑因素:
 
-* 你只有一个单一的数据中心(DC): 选择shared DB(MGR/PXC)或甚至更简单的部署方式(参考[Orchestrator高可用](Deployment/Orchestrator高可用.md))
+* 你只有一个单一的数据中心(DC): 选择shared DB(MGR/PXC)或甚至更简单的部署方式(参考[Orchestrator高可用](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Deployment/Orchestrator高可用.md))
 * 你对Galera/XtraDB Cluster/InnoDB Cluster很熟悉, 并且有自动化部署和维护它们的能力: 挑选shared DB.
 * 你有高延迟的跨DC网络: 选择`orchestrator/raft`.
 * 你不想为`orchestrator` 使用MySQL: choose `orchestrator/raft` with `SQLite` backend.
@@ -50,26 +50,3 @@
 ### Notes
 * Another synchronous replication setup is that of a single writer. This would require an additional proxy between the `orchestrator` nodes and the underlying cluster, and is not considered above.
 `orchestrator` -> proxysql -> MySQL集群(如主从复制)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -173,7 +173,7 @@ topology2.master.instance.com:3306 [OK,5.6.17-log,STATEMENT,>>]
 
 ```
 #### More
-The above should get you up and running. For more please consult the [TOC](TOC.md). For CLI commands listing just run:
+The above should get you up and running. For more please consult the [TOC](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/TOC.md). For CLI commands listing just run:
 
 ```Plain Text
 orchestrator-client -help

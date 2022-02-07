@@ -1,6 +1,6 @@
 # 安装-Installation
 # [Installation](https://github.com/openark/orchestrator/blob/master/docs/install.md)
-关于生产环境部署, 见[在生产环境中部署Orchestrator](Deployment/在生产环境中部署Orchestrator.md). 下面的文字将引导你通过手动方式安装和必要的配置来使其工作.
+关于生产环境部署, 见[在生产环境中部署Orchestrator](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Deployment/在生产环境中部署Orchestrator.md). 下面的文字将引导你通过手动方式安装和必要的配置来使其工作.
 
 以下内容假设您将使用同一台机器来运行`orchestrator`和后端MySQL数据库. 如果不是, 请用适当的主机名替换`127.0.0.1`. 将`orch_backend_password`替换为您自己的密码.
 
@@ -13,14 +13,14 @@ sudo mkdir -p /usr/local
 sudo cd /usr/local
 sudo tar xzfv orchestrator-1.0.tar.gz
 ```
-* Install from `RPM` 
-会安装到`/usr/local/orchestrator` 
+* Install from `RPM`
+会安装到`/usr/local/orchestrator`
 
 ```bash
 sudo rpm -i orchestrator-1.0-1.x86_64.rpm
 ```
-* Install from `DEB` 
-会安装到`/usr/local/orchestrator` 
+* Install from `DEB`
+会安装到`/usr/local/orchestrator`
 
 ```bash
 sudo dpkg -i orchestrator_1.0_amd64.deb

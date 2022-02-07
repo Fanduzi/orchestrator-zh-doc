@@ -8,7 +8,7 @@
   "ListenAddress": ":3000",
 }
 ```
-你可以选择`MySQL`后端或`SQLite`后端. 参见[Orchestrator高可用](Deployment/Orchestrator高可用.md), 了解使用这两种方式的场景、可能性和原因。
+你可以选择`MySQL`后端或`SQLite`后端. 参见[Orchestrator高可用](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Deployment/Orchestrator高可用.md), 了解使用这两种方式的场景、可能性和原因。
 
 ## MySQL backend
 你需要设置提供给`orchestrator` 使用的库名和用户密码:
@@ -56,17 +56,6 @@ GRANT ALL ON orchestrator.* TO 'orchestrator_srv'@'orc_host';
 ```
 `SQLite`被嵌入到`orchestrator`中.
 
-> `SQLite` is embedded within `orchestrator`. 
+> `SQLite` is embedded within `orchestrator`.
 
 如果`SQLite3DataFile`参数指定的文件不存在, `orchestrator`将创建它. `orchestrator`需要对给定的路径/文件有写权限.
-
-
-
-
-
-
-
-
-
-
-

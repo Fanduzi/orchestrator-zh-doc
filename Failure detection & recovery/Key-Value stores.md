@@ -30,7 +30,7 @@ Clusters' master entries在以下情况下被填入:
 * 手工的entry填充请求:
    * `orchestrator-client -c submit-masters-to-kv-stores` 提交所有集群的master到KV, 或
    * `orchestrator-client -c submit-masters-to-kv-stores -alias mycluster` 提交`mycluster` 集群的master到KV
-另见[orchestrator-client](Use/orchestrator-client.md). 也可以使用orchestrator命令行.
+另见[orchestrator-client](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Use/orchestrator-client.md). 也可以使用orchestrator命令行.
 或者你可以直接访问API:
    * `/api/submit-masters-to-kv-stores`
    * /api/submit-masters-to-kv-stores/:alias

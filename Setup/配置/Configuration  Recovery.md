@@ -2,9 +2,9 @@
 # [Configuration: recovery](https://github.com/openark/orchestrator/blob/master/docs/configuration-recovery.md)
 `orchestrator`将对您的拓扑结构进行故障恢复. 您将指示`orchestrator`对哪些集群进行自动恢复, 哪些集群需要人工来恢复. 您将为`orchestrator`配置钩子以移动VIP, 更新服务发现等.
 
-恢复依赖于检测，在[Configuration: Failure detection](Setup/配置/Configuration%20%20Failure%20detection.md)中讨论过.
+恢复依赖于检测，在[Configuration: Failure detection](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Setup/配置/Configuration%20%20Failure%20detection.md)中讨论过.
 
-关于恢复的所有信息, 请参考 [Topology recovery](Failure%20detection%20%26%20recovery/Topology%20recovery.md)
+关于恢复的所有信息, 请参考 [Topology recovery](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Failure%20detection%20%26%20recovery/Topology%20recovery.md)
 
 还要考虑到, 你的MySQL拓扑结构本身需要遵循一些规则, 参考[MySQL Configuration](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Setup/%E9%85%8D%E7%BD%AE/Configuration%20%20Recovery.md#mysql-configuration)
 
@@ -171,7 +171,7 @@
 
 * Oracle/Percona with GTID: promotable server必须启用`log_bin`和`log_slave_updates`. 复制体必须使用 `AUTO_POSITION=1`(通过 CHANGE MASTER TO MASTER\_AUTO\_POSITION=1).
 * MariaDB GTID: promotable server必须启用`log_bin`和`log_slave_updates`.
-* [Pseudo GTID](Various/Pseudo%20GTID.md): promotable server必须启用`log_bin`和`log_slave_updates`. 如果使用`5.7/8.0` 并行复制(parallel replication), 请设置`slave_preserve_commit_order=1`
+* [Pseudo GTID](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Various/Pseudo%20GTID.md): promotable server必须启用`log_bin`和`log_slave_updates`. 如果使用`5.7/8.0` 并行复制(parallel replication), 请设置`slave_preserve_commit_order=1`
 * BinlogServers: promotable servers must have `log_bin` enabled.
 
 还可以考虑通过阅读[MySQL configuration](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Setup/%E9%85%8D%E7%BD%AE/Configuration%20%20Failure%20detection.md#mysql-configuration)优化故障检测的一些配置.

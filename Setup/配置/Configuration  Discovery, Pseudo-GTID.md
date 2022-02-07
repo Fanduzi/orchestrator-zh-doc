@@ -4,7 +4,7 @@
 
 > `orchestrator` will identify magic hints in the binary logs, making it able to manipulate a non-GTID topology as if it had GTID, including relocation of replicas, smart failovers end more.
 
-另见[Pseudo GTID](Various/Pseudo%20GTID.md)
+另见[Pseudo GTID](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Various/Pseudo%20GTID.md)
 
 ### Automated Pseudo-GTID injection
 `orchestrator` 可以为你注入Pseudo-GTID条目, 省去你的麻烦:
@@ -57,14 +57,3 @@ REVOKE DROP ON _pseudo_gtid_.* FROM 'orchestrator'@'orch_host';
 
 * `orchestrator`管理的MySQL集群中有一个`meta` 数据库
 * 你将通过[这个示例脚本](https://github.com/openark/orchestrator/tree/master/resources/pseudo-gtid)注入Pseudo-GTID条目
-
-
-
-
-
-
-
-
-
-
-
