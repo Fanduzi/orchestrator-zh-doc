@@ -63,10 +63,10 @@ mysql meta -e "INSERT INTO cluster (anchor, cluster_name, cluster_domain) VALUES
 
 >  `orchestrator` enables the semi-sync master flag during a master failover (e.g. `DeadMaster`) if `DetectSemiSyncEnforcedQuery` returns a value > 0 for the new master. `orchestrator` does not trigger any recoveries if the master flag is otherwise changed or incorrectly set.
 
-A semi-sync master可以进入两种故障情况. [[LockedSemiSyncMaster id=78787f6a-1f80-4d86-a3ba-e1a0e5993eae]]和[[MasterWithTooManySemiSyncReplicas id=78787f6a-1f80-4d86-a3ba-e1a0e5993eae]], 在这两种情况的恢复过程中, `orchestrator`会关闭半同步的从库(打开了rpl\_semi\_sync\_slave\_enabled的从库)的`rpl_semi_sync_master_enabled` 参数.
+A semi-sync master可以进入两种故障情况. [LockedSemiSyncMaster](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Failure%20detection%20%26%20recovery/Failure%20detection.md#lockedsemisyncmaster)和[MasterWithTooManySemiSyncReplicas](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Failure%20detection%20%26%20recovery/Failure%20detection.md#masterwithtoomanysemisyncreplicas), 在这两种情况的恢复过程中, `orchestrator`会关闭半同步的从库(打开了rpl\_semi\_sync\_slave\_enabled的从库)的`rpl_semi_sync_master_enabled` 参数.
 
 #### Semi-sync replicas (`rpl_semi_sync_slave_enabled`)
-`orchestrator`可以检测拓扑结构中是否存在不正确的半同步复制数量([[LockedSemiSyncMaster id=78787f6a-1f80-4d86-a3ba-e1a0e5993eae]]和[[MasterWithTooManySemiSyncReplicas id=78787f6a-1f80-4d86-a3ba-e1a0e5993eae]]) 然后可以通过启用/禁用相应的半同步复制参数来纠正这种情况.
+`orchestrator`可以检测拓扑结构中是否存在不正确的半同步复制数量([LockedSemiSyncMaster](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Failure%20detection%20%26%20recovery/Failure%20detection.md#lockedsemisyncmaster)和[MasterWithTooManySemiSyncReplicas](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Failure%20detection%20%26%20recovery/Failure%20detection.md#masterwithtoomanysemisyncreplicas)) 然后可以通过启用/禁用相应的半同步复制参数来纠正这种情况.
 
 这种行为可以由以下选项控制:
 
@@ -85,10 +85,10 @@ A semi-sync master可以进入两种故障情况. [[LockedSemiSyncMaster id=7878
 
 ```Plain Text
          ,- replica1 (priority = 10, rpl_semi_sync_slave_enabled = 1)
-  master 
+  master
          `- replica2 (priority = 20, rpl_semi_sync_slave_enabled = 1)
 ```
-`orchestrator`会检测到[[MasterWithTooManySemiSyncReplicas id=78787f6a-1f80-4d86-a3ba-e1a0e5993eae]]的情况, 并在replica1上禁用半同步(低优先级).
+`orchestrator`会检测到[MasterWithTooManySemiSyncReplicas](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Failure%20detection%20%26%20recovery/Failure%20detection.md#masterwithtoomanysemisyncreplicas)的情况, 并在replica1上禁用半同步(低优先级).
 
 **Example 2**: Enforcing a weak semi-sync replica toplogy, with
 
@@ -103,18 +103,7 @@ A semi-sync master可以进入两种故障情况. [[LockedSemiSyncMaster id=7878
 
 ```Plain Text
          ,- replica1 (priority = 2586, promotion rule = prefer, rpl_semi_sync_slave_enabled = 0)
-  master 
+  master
          `- replica2 (priority = 2586, promotion rule = neutral, rpl_semi_sync_slave_enabled = 0)
 ```
-`orchestrator`会检测到一个[[LockedSemiSyncMaster id=78787f6a-1f80-4d86-a3ba-e1a0e5993eae]]场景, 并在replica1上启用半同步(因为replica1的promotion rule是prefer)
-
-
-
-
-
-
-
-
-
-
-
+`orchestrator`会检测到一个[LockedSemiSyncMaster](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Failure%20detection%20%26%20recovery/Failure%20detection.md#lockedsemisyncmaster)场景, 并在replica1上启用半同步(因为replica1的promotion rule是prefer)

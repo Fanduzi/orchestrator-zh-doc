@@ -59,11 +59,11 @@ Promotion rules在一小时后失效.  That's the dynamic nature of `orchestrato
 ```bash
 */2 * * * * root "/usr/bin/perl -le 'sleep rand 10' && /usr/bin/orchestrator-client -c register-candidate -i this.hostname.com --promotion-rule prefer"
 ```
-此设置来自生产环境. cron entries通过`puppet` 更新来设置新的`promotion_rule` . 一个server可能现在是`prefer`的, 但5分钟后就是`prefer_not` 
+此设置来自生产环境. cron entries通过`puppet` 更新来设置新的`promotion_rule` . 一个server可能现在是`prefer`的, 但5分钟后就是`prefer_not`
 
 > 这取决于你们公司自己的选主逻辑, 如, prefer的服务器要是是例行维护了, 那么就要更改`promotion_rule`
 
-你可以整合你自己的服务发现方法、你自己的脚本, 以提供你最新的`promotion_rule` 
+你可以整合你自己的服务发现方法、你自己的脚本, 以提供你最新的`promotion_rule`
 
 
 
@@ -105,7 +105,7 @@ $ curl -s "http://my.orchestrator.service:80/api/begin-downtime/my.hostname/3306
 
 更多信息请参阅[Pseudo GTID](Various/Pseudo%20GTID.md).
 
-`orchestrator` 可以为你注入 Pseudo-GTID条目. 你的集群将神奇地拥有类似GTID的超能力. 遵循[[Automated Pseudo-GTID injection id=f65504cf-f002-4cc4-beb7-acfac2b125c6]] 
+`orchestrator` 可以为你注入 Pseudo-GTID条目. 你的集群将神奇地拥有类似GTID的超能力. 遵循[Automated Pseudo-GTID injection](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Setup/%E9%85%8D%E7%BD%AE/Configuration%20%20Discovery%2C%20Pseudo-GTID.md#automated-pseudo-gtid-injection)
 
 ### Populating meta data 填充元数据
 `orchestrator` 会从server中提取一些元数据:
@@ -144,4 +144,3 @@ CREATE TABLE IF NOT EXISTS cluster (
 
 ### Tagging 标签
 `orchestrator`支持对实例打标签, 以及通过标签搜索实例. See[Tags](Operation/Tags.md)
-

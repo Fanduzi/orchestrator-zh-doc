@@ -94,7 +94,7 @@ HA是通过后端数据库的高可用实现的. 现有的解决方案是:
 
 * Use `/api/leader-check` as HTTP health check for your proxy.
 
-* 或者对多个`orchestrator`后端使用[[orchestrator-client id=c2371d70-81a9-4e29-bc16-a83fa5d40fb8]]; `orchestrator-client`将找出leader并将请求发送给它.
+* 或者对多个`orchestrator`后端使用[orchestrator-client](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Use/orchestrator-client.md); `orchestrator-client`将找出leader并将请求发送给它.
 
 ![image](images/dlnTL2c8qw-wWm2A91Y7zuMz0j-RLHGMH9FWPQlPJ9s.png)
 

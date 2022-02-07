@@ -41,7 +41,7 @@ REVOKE DROP ON _pseudo_gtid_.* FROM 'orchestrator'@'orch_host';
 * 尤其是在主库故障切换时, 你不需要在旧的/晋升的主站上禁用/启用Pseudo-GTID
 
 ### Manual Pseudo-GTID injection
-建议使用[[Automated Pseudo-GTID injection id=f65504cf-f002-4cc4-beb7-acfac2b125c6]]方式.
+建议使用[Automated Pseudo-GTID injection](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Setup/%E9%85%8D%E7%BD%AE/Configuration%20%20Discovery%2C%20Pseudo-GTID.md#automated-pseudo-gtid-injection)方式.
 
 如果你想自己注入Pseudo-GTID, 我们建议你应按以下方式进行配置:
 

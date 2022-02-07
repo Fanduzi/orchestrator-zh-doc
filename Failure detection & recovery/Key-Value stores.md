@@ -7,7 +7,7 @@
 * [Consul](https://github.com/hashicorp/consul)
 * [ZooKeeper](https://zookeeper.apache.org/)
 
-更多信息请参阅[[Configuration: Key-Value stores id=351cd58b-23ad-4077-9e72-08491b671195]] 
+更多信息请参阅[Configuration: Key-Value stores](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Setup/%E9%85%8D%E7%BD%AE/Configuration%20%20Key-Value%20stores.md)
 
 ### Key-Value usage
 At this time Key-Value (aka KV) stores are used for:
@@ -32,7 +32,7 @@ Clusters' master entries在以下情况下被填入:
    * `orchestrator-client -c submit-masters-to-kv-stores -alias mycluster` 提交`mycluster` 集群的master到KV
 另见[orchestrator-client](Use/orchestrator-client.md). 也可以使用orchestrator命令行.
 或者你可以直接访问API:
-   * `/api/submit-masters-to-kv-stores` 
+   * `/api/submit-masters-to-kv-stores`
    * /api/submit-masters-to-kv-stores/:alias
 
 实际的故障转移和手动请求都将覆盖任何现有的内部和外部KV entries.
@@ -76,6 +76,3 @@ Atomic [Consul Transaction](https://www.consul.io/api-docs/txn) support is ena
 This causes Orchestrator to use a [Consul Transaction](https://www.consul.io/api-docs/txn) when distributing one or more Consul KVs. KVs are read from the server in one transaction and any necessary updates are performed in a second transaction.
 
 Orchestrator groups KV updates by key-prefix into groups of of 5 to 64 operations *(default 5)*. This grouping ensures updates to a single cluster *(5 x KVs)* happen atomically. Increasing the `ConsulMaxKVsPerTransaction` configuration setting from `5` *(default)* to a max of `64` *(Consul Transaction API limit)* allows more operations to be grouped into fewer transactions but more can fail at once.
-
-
-

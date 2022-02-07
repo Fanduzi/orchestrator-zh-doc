@@ -6,7 +6,7 @@
 
 关于恢复的所有信息, 请参考 [Topology recovery](Failure%20detection%20%26%20recovery/Topology%20recovery.md)
 
-还要考虑到, 你的MySQL拓扑结构本身需要遵循一些规则, 参考[[MySQL Configuration id=1e244518-4a10-46c4-81b5-2da1c8998295]] 
+还要考虑到, 你的MySQL拓扑结构本身需要遵循一些规则, 参考[MySQL Configuration](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Setup/%E9%85%8D%E7%BD%AE/Configuration%20%20Recovery.md#mysql-configuration)
 
 ```yaml
 {
@@ -127,7 +127,7 @@
 * `ORC_LOST_REPLICAS`
 * `ORC_REPLICA_HOSTS`
 * `ORC_COMMAND` (`"force-master-failover"`, `"force-master-takeover"`, `"graceful-master-takeover"` if applicable)
-并且, 如果恢复成功, `orchestrator`还将设置以下环境变量: 
+并且, 如果恢复成功, `orchestrator`还将设置以下环境变量:
 
 * `ORC_SUCCESSOR_HOST`
 * `ORC_SUCCESSOR_PORT`
@@ -158,7 +158,7 @@
 * `{replicaHosts}` (replaces `{slaveHosts}`)
 * `{isSuccessful}`
 * `{command}` (`"force-master-failover"`, `"force-master-takeover"`, `"graceful-master-takeover"` if applicable)
-并且, 如果恢复成功, `orchestrator`还将提供以下变量: 
+并且, 如果恢复成功, `orchestrator`还将提供以下变量:
 
 * `{successorHost}`
 * `{successorPort}`
@@ -171,10 +171,7 @@
 
 * Oracle/Percona with GTID: promotable server必须启用`log_bin`和`log_slave_updates`. 复制体必须使用 `AUTO_POSITION=1`(通过 CHANGE MASTER TO MASTER\_AUTO\_POSITION=1).
 * MariaDB GTID: promotable server必须启用`log_bin`和`log_slave_updates`.
-* [Pseudo GTID](Various/Pseudo%20GTID.md): promotable server必须启用`log_bin`和`log_slave_updates`. 如果使用`5.7/8.0` 并行复制(parallel replication), 请设置`slave_preserve_commit_order=1` 
+* [Pseudo GTID](Various/Pseudo%20GTID.md): promotable server必须启用`log_bin`和`log_slave_updates`. 如果使用`5.7/8.0` 并行复制(parallel replication), 请设置`slave_preserve_commit_order=1`
 * BinlogServers: promotable servers must have `log_bin` enabled.
 
-还可以考虑通过阅读[[MySQL configuration id=4124be88-14f6-4c3a-87c8-f4bb76e0b692]]优化故障检测的一些配置.
-
-
-
+还可以考虑通过阅读[MySQL configuration](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Setup/%E9%85%8D%E7%BD%AE/Configuration%20%20Failure%20detection.md#mysql-configuration)优化故障检测的一些配置.

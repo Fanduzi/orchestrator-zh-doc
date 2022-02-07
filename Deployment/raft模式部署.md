@@ -23,8 +23,8 @@
 * 将`orchestrator`服务部署到service boxes上. 正如所建议的, 您可能希望将`orchestrator`服务和`MySQL`服务放在同一个机器上. If using `SQLite` there's nothing else to do.
 * 考虑在服务盒(service boxes)之上增加一个代理(proxy); 代理将把所有流量重定向到leader node(这里指的是`orchestrator` 服务leader节点). 有一个而且只有一个领导者节点, 状态检查的端点是`/api/leader-check` .
    * 客户端将只与健康的raft节点交互.
-      * 最简单的方法就是只与leader互动. 设置代理proxy是确保这一点的一种方法. See [[Proxy: leader id=355cf04c-56ad-4501-943a-39bbbc59e3bf]] .
-      * 否则，所有健康的raft节点将反向代理您的请求到leader. See [[Proxy: healthy raft nodes id=355cf04c-56ad-4501-943a-39bbbc59e3bf]] .
+      * 最简单的方法就是只与leader互动. 设置代理proxy是确保这一点的一种方法. See [Proxy: leader](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Setup/%E9%83%A8%E7%BD%B2/Orchestrator%20raft%2C%20consensus%20cluster.md#proxy-leader) .
+      * 否则，所有健康的raft节点将反向代理您的请求到leader. See [Proxy: healthy raft nodes](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Setup/%E9%83%A8%E7%BD%B2/Orchestrator%20raft%2C%20consensus%20cluster.md#proxy-healthy-raft-nodes) .
 * 任何东西都不应该直接与后端DB交互. 只有leader有能力与其他raft节点协调对数据的更改.
 * `orchestrator`节点之间通过`DefaultRaftPort`进行通信. 该端口应该对所有`orchestrator`节点开放, 其他任何人都不需要访问该端口.
 
@@ -93,7 +93,7 @@ ORCHESTRATOR_API="http://your.orchestrator.service.host1:3000/api http://your.or
 Such that the backend database is completely empty/missing. 分配/重新分配时后端数据库其实是没有数据或者丢失数据的
 
 * 如果后端数据库是`SQLite`, 则什么也不需要做. 该节点会加入raft group, 从一个active node获得snapshot, 追raft log然后正常运行.
-* 如果后端数据库是`MySQL` , 也会尝试像上面那样做. 然而, `orchestrator` 需要有权限操作`MySQL` ,详见[[MySQL backend DB setup id=51d20469-439a-451a-a336-6726cff3a142]] .  因此, 如果这是一个全新的服务器, 这些权限可能不存在. 例如, 我们的`puppet`设置会定期确保在我们的MySQL服务器上设置权限. 因此, 当新服务器被配置时, 下一次`puppet`运行会为`orchestrator`设置权限. `puppet`还确保`orchestrator`服务正在运行, 因此, 在一段时间内, `orchestrator`可以自动加入组.
+* 如果后端数据库是`MySQL` , 也会尝试像上面那样做. 然而, `orchestrator` 需要有权限操作`MySQL` ,详见[MySQL backend DB setup](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Setup/%E9%85%8D%E7%BD%AE/Configuration%20%20Backend.md#mysql-backend-db-setup) .  因此, 如果这是一个全新的服务器, 这些权限可能不存在. 例如, 我们的`puppet`设置会定期确保在我们的MySQL服务器上设置权限. 因此, 当新服务器被配置时, 下一次`puppet`运行会为`orchestrator`设置权限. `puppet`还确保`orchestrator`服务正在运行, 因此, 在一段时间内, `orchestrator`可以自动加入组.
 
 ##### Cloning is valid
 如果你选择这样做, 你也可以通过使用你喜欢的备份/恢复或转储/加载方法克隆你现有的后台数据库来配置新的盒子.

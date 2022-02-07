@@ -17,12 +17,12 @@
 * [Pseudo GTID](Various/Pseudo%20GTID.md)
 * Binlog Servers
 
-更多细节见[[MySQL Configuration id=1e244518-4a10-46c4-81b5-2da1c8998295]]
+更多细节见[MySQL Configuration](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Setup/%E9%85%8D%E7%BD%AE/Configuration%20%20Recovery.md#mysql-configuration)
 
 自动恢复是可以选的, 请参阅 [Configuration: Recovery](Setup/配置/Configuration%20%20Recovery.md)
 
 ### What's in a recovery?
-基于[[Failure detection id=96b41447-f291-4f3e-82d3-381d6eea9fbc]], 一连串的事件构成了一个恢复过程:
+基于[Failure detection](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Failure%20detection%20%26%20recovery/Failure%20detection.md), 一连串的事件构成了一个恢复过程:
 
 * 恢复前的钩子(执行外部进程)
 > Pre-recovery hooks (external processes execution)
@@ -332,7 +332,7 @@ an instance. An instance can be downtimed (via `orchestrator-client -c begin-dow
 请注意, 手动恢复(例如 `orchestrator-client -c recover`)会覆盖停机时间.
 
 ## Recovery hooks
-`orchestrator`支持钩子--通过恢复过程调用的外部脚本. 这些是通过shell, 特别是bash调用的命令数组. 参见恢复配置中的[[Hooks id=1e244518-4a10-46c4-81b5-2da1c8998295]]
+`orchestrator`支持钩子--通过恢复过程调用的外部脚本. 这些是通过shell, 特别是bash调用的命令数组. 参见恢复配置中的[Hooks](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Setup/%E9%85%8D%E7%BD%AE/Configuration%20%20Recovery.md#hooks)
 
 * `OnFailureDetectionProcesses`: described in [Failure detection](Failure%20detection%20%26%20recovery/Failure%20detection.md).
 * `PreGracefulTakeoverProcesses`: 在old master进入只读状态之前, 在`graceful-master-takeover`命令中调用.

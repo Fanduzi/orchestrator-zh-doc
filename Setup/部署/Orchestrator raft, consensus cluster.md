@@ -57,7 +57,7 @@ Only the leader is allowed to make changes.
 
 最简单的设置是, 通过在`orchestrator`服务上设置一个`HTTP`代理(如HAProxy), 只将流量路由到领导者.
 
-> 另一种方法请见[[orchestrator-client id=355cf04c-56ad-4501-943a-39bbbc59e3bf]]
+> 另一种方法请见[orchestrator-client](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Setup/%E9%83%A8%E7%BD%B2/Orchestrator%20raft%2C%20consensus%20cluster.md#orchestrator-client)
 
 * 使用`/api/leader-check` 做健康检查. 在任何时候, 最多只有一个`orchestrator`节点会以`HTTP 200/OK`回复该检查; 其他节点会以`HTTP 404/Not found` 回复.
    * Hint: 你可以使用, 例如, `/api/leader-check/503`是你明确希望获得503响应代码, 或类似的任何其他代码.
@@ -149,7 +149,7 @@ The *leader* will also educate its followers about ongoing failovers.
 * `orchestrator`节点可能会宕机, 然后恢复. (当它恢复时)它将重新加入`raft`组, 并接收它在离开时错过的任何事件. 节点离开多长时间并不重要. 如果它没有相关的本地`raft`log/snapshots, 另一个节点将自动为它提供最近的快照.
 * 如果无法加入 `raft` 组, 那么 `orchestrator` 服务将退出.
 
-See also [[KV and orchestrator/raft id=df7404f7-5427-4861-af1c-f5a706280b7d]] via `orchestrator/raft`.
+See also [KV and orchestrator/raft](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Failure%20detection%20%26%20recovery/Key-Value%20stores.md#kv-and-orchestratorraft) via `orchestrator/raft`.
 
 ### Main advantages of orchestrator/raft 主要优势
 * 高可用

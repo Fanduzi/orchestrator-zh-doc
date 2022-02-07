@@ -25,4 +25,4 @@ Use the following small steps to configure `orchestrator`:
 * [Orchestrator configuration in larger environments](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Setup/%E9%85%8D%E7%BD%AE/Orchestrator%20configuration%20in%20larger%20environments.md)
 
 ### Configuration sample file
-为方便起见, 这个[[示例配置文件 id=f463a4e0-87bb-49e1-b14b-2296e480c0f3]]是GitHub生产环境中使用的`orchestrator`配置.
+为方便起见, 这个[示例配置文件](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Setup/%E9%85%8D%E7%BD%AE/%E7%A4%BA%E4%BE%8B%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6.md)是GitHub生产环境中使用的`orchestrator`配置.
