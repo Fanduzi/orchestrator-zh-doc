@@ -448,7 +448,7 @@ PR [https://github.com/openark/orchestrator/pull/1100](https://github.com/openar
 
 默认值: `false`
 
-决定是否从`LockedSemiSyncMaster`情况下恢复的标志. 如果启用, `LockedSemiSyncMaster`的恢复将按照优先级顺序在副本上启用（但绝不会禁用）半同步, 以匹配主库的等待计数(rpl\_semi\_sync\_master\_wait\_for\_slave\_count). 如果[[EnforceExactSemiSyncReplicas id=41d34469-00db-4a66-a339-b914d7dc6702]]被设置了, 这个选项就没有效果. 如果你想只处理半同步复制太少的情况, 而不是太多的话, 这个选项很有用.
+决定是否从`LockedSemiSyncMaster`情况下恢复的标志. 如果启用, `LockedSemiSyncMaster`的恢复将按照优先级顺序在副本上启用（但绝不会禁用）半同步, 以匹配主库的等待计数(rpl\_semi\_sync\_master\_wait\_for\_slave\_count). 如果[EnforceExactSemiSyncReplicas](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Setup/%E9%85%8D%E7%BD%AE/%E9%85%8D%E7%BD%AE%E5%8F%82%E6%95%B0%E8%AF%A6%E8%A7%A3-III.md#enforceexactsemisyncreplicas)被设置了, 这个选项就没有效果. 如果你想只处理半同步复制太少的情况, 而不是太多的话, 这个选项很有用.
 
 > If true, orchestrator will recover from a LockedSemiSync state by enabling semi-sync on replicas to match the wait count; this behavior can be overridden by EnforceExactSemiSyncReplicas
 
