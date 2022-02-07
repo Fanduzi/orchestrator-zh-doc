@@ -15,7 +15,7 @@
 
 默认值: `false`
 
-默认`false` . 当为`true` 时, `orchestrator`将只用与故障集群主库位于同一DC的从库替换故障的主库. 它将尽最大努力从同一DC中找到一个替代者, 如果找不到, 将中止（失败）故障转移. 另请参阅[[DetectDataCenterQuery id=758fdd72-feac-4c95-84ea-86c51c0fafe9]]和[[DataCenterPattern id=112feef8-f2b2-4612-856d-fb4f76ab2a73]]配置置变量.
+默认`false` . 当为`true` 时, `orchestrator`将只用与故障集群主库位于同一DC的从库替换故障的主库. 它将尽最大努力从同一DC中找到一个替代者, 如果找不到, 将中止（失败）故障转移. 另请参阅[[DetectDataCenterQuery id=758fdd72-feac-4c95-84ea-86c51c0fafe9]]和[DataCenterPattern](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Setup/%E9%85%8D%E7%BD%AE/%E9%85%8D%E7%BD%AE%E5%8F%82%E6%95%B0%E8%AF%A6%E8%A7%A3-%E2%85%A1.md#datacenterpattern)配置置变量.
 
 > When true (default: false), cross-DC master failover are not allowed, orchestrator will do all it can to only fail over within same DC, or else not fail over at all.
 

@@ -1,6 +1,6 @@
 # Topology recovery
 # [Topology recovery](https://github.com/openark/orchestrator/blob/master/docs/topology-recovery.md)
-`orchestrator`能够从一系列的故障场景([[Failure detection scenarios 故障检测场景 id=78787f6a-1f80-4d86-a3ba-e1a0e5993eae]])中恢复。值得注意的是，它可以恢复a failed master or a failed intermediate master.
+`orchestrator`能够从一系列的故障场景([Failure detection scenarios 故障检测场景](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Failure%20detection%20%26%20recovery/Failure%20detection.md#failure-detection-scenarios-%E6%95%85%E9%9A%9C%E6%A3%80%E6%B5%8B%E5%9C%BA%E6%99%AF))中恢复。值得注意的是，它可以恢复a failed master or a failed intermediate master.
 
 `orchestrator` 支持:
 
