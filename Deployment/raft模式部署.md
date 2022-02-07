@@ -1,11 +1,11 @@
 # raft模式部署
 # [Orchestrator deployment: raft](https://github.com/openark/orchestrator/blob/master/docs/deployment-raft.md)
-本文描述了部署[Orchestrator/raft, consensus cluster](Setup/部署/Orchestrator%20raft%2C%20consensus%20cluster.md)的方法.
+本文描述了部署[Orchestrator/raft, consensus cluster](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Setup/部署/Orchestrator%20raft%2C%20consensus%20cluster.md)的方法.
 
-这篇文的完善了[在生产环境中部署Orchestrator](Deployment/在生产环境中部署Orchestrator.md).
+这篇文的完善了[在生产环境中部署Orchestrator](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Deployment/在生产环境中部署Orchestrator.md).
 
 ### Backend DB
-你可以选择使用MySQL和SQLite. See[configuration-backend](Setup/配置/Configuration%20%20Backend.md)
+你可以选择使用MySQL和SQLite. See[configuration-backend](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Setup/配置/Configuration%20%20Backend.md)
 
 * For MySQL:
    * 后端数据库将是独立的. No replication setup. 每个`orchestrator`节点将与自己专用的后端数据库交互.
@@ -33,7 +33,7 @@
 
 * 直接与HTTP API交互
    * 你只能和leader互动. 实现这一点的一个好方法是使用代理.
-* 使用[orchestrator-client](Use/orchestrator-client.md)脚本([orchestrator-client](Use/orchestrator-client.md)本质是一个shell脚本).
+* 使用[orchestrator-client](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Use/orchestrator-client.md)脚本([orchestrator-client](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Use/orchestrator-client.md)本质是一个shell脚本).
    * 将`orchestrator-client`部署在你希望与`orchestrator`交互的任何盒子上.
    * Create and edit `/etc/profile.d/orchestrator-client.sh` on those boxes to read:
 

@@ -7,12 +7,12 @@
 
 > You will first decide whether you want to run `orchestrator` on a shared backend DB or with a `raft` setup
 
-参见[Orchestrator高可用](Deployment/Orchestrator高可用.md)，以及[orchestrator/raft vs. synchronous replication setup](Setup/部署/orchestrator%20raft%20vs.%20synchronous%20replication%20setup.md)的比较和讨论.
+参见[Orchestrator高可用](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Deployment/Orchestrator高可用.md)，以及[orchestrator/raft vs. synchronous replication setup](Setup/部署/orchestrator%20raft%20vs.%20synchronous%20replication%20setup.md)的比较和讨论.
 
 遵循这些部署指南:
 
-* 在共享后端数据库上部署`orchestrator` : [shard backend模式部署](Deployment/shard%20backend模式部署.md)
-* 通过raft共识部署`orchestrator` : [raft模式部署](Deployment/raft模式部署.md)
+* 在共享后端数据库上部署`orchestrator` : [shard backend模式部署](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Deployment/shard%20backend模式部署.md)
+* 通过raft共识部署`orchestrator` : [raft模式部署](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Deployment/raft模式部署.md)
 
 ## Next steps
 `orchestrator`在动态环境中工作得很好, 并适应inventory、配置和拓扑的变化. 它的动态特性表明, 环境也应该在动态特性中与它相互作用. 与硬编码的配置不同, `orchestrator`乐于接受动态提示和请求, 这些提示和请求可以更改其对拓扑结构的看法. 部署好`orchestrator`服务和客户端后, 请考虑执行以下操作以充分利用这一点.
@@ -31,7 +31,7 @@
 ```
 在上述情况下, 每个主机每天让`orchestrator`了解自己一次; 新启动的主机在第二天午夜被发现. 引入睡眠是为了避免所有服务器在同一时间对`orchestrator`造成冲击.
 
-以上使用的是[orchestrator-client](Use/orchestrator-client.md), 但如果是使用[shard backend模式部署](Deployment/shard%20backend模式部署.md), 你可以使用orchestrator cli.
+以上使用的是[orchestrator-client](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Use/orchestrator-client.md), 但如果是使用[shard backend模式部署](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Deployment/shard%20backend模式部署.md), 你可以使用orchestrator cli.
 
 ### Adding promotion rules
 在发生故障转移时, 有些server更适合提升为leader. 有些server则不是好选择. 例子:
@@ -103,7 +103,7 @@ $ curl -s "http://my.orchestrator.service:80/api/begin-downtime/my.hostname/3306
 ### Pseudo-GTID
 如果你没有使用GTID, 你会很高兴知道`orchestrator`可以利用Pseudo-GTID来实现与GTID类似的好处, 例如将两个不相关的服务器关联起来, 使一个从另一个复制. This implies master and intermediate master failovers.
 
-更多信息请参阅[Pseudo GTID](Various/Pseudo%20GTID.md).
+更多信息请参阅[Pseudo GTID](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Various/Pseudo%20GTID.md).
 
 `orchestrator` 可以为你注入 Pseudo-GTID条目. 你的集群将神奇地拥有类似GTID的超能力. 遵循[Automated Pseudo-GTID injection](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Setup/%E9%85%8D%E7%BD%AE/Configuration%20%20Discovery%2C%20Pseudo-GTID.md#automated-pseudo-gtid-injection)
 
@@ -143,4 +143,4 @@ CREATE TABLE IF NOT EXISTS cluster (
 请注意`orchestrator`不会创建这样的表, 也不会填充它们. 你需要创建表, 填充它们, 并让orchestrator知道如何查询数据.
 
 ### Tagging 标签
-`orchestrator`支持对实例打标签, 以及通过标签搜索实例. See[Tags](Operation/Tags.md)
+`orchestrator`支持对实例打标签, 以及通过标签搜索实例. See[Tags](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Operation/Tags.md)
