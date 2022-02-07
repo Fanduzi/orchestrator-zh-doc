@@ -38,7 +38,7 @@ Clusters' master entries在以下情况下被填入:
 实际的故障转移和手动请求都将覆盖任何现有的内部和外部KV entries.
 
 ### KV and orchestrator/raft
-在[[Orchestrator/raft, consensus cluster id=355cf04c-56ad-4501-943a-39bbbc59e3bf]] 部署模式中, 所有KV写入都要通过`raft` 协议. 因此, 一旦领导者确定需要对KV存储进行写入, 它就会向所有`raft`节点发布请求. 每个节点将根据自己的配置, 独立地应用写入.
+在[Orchestrator/raft, consensus cluster](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Setup/%E9%83%A8%E7%BD%B2/Orchestrator%20raft%2C%20consensus%20cluster.md) 部署模式中, 所有KV写入都要通过`raft` 协议. 因此, 一旦领导者确定需要对KV存储进行写入, 它就会向所有`raft`节点发布请求. 每个节点将根据自己的配置, 独立地应用写入.
 
 #### Implications
 举例来说, 假设你在一个3个数据中心的设置中运行`orchestrator/raft`, 每个DC一个节点. 另外, 我们假设你在这些DC上都部署了Consul. Consul的设置通常是在DC之间, 可能还有跨DC的异步复制.

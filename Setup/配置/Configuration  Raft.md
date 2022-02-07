@@ -1,6 +1,6 @@
 # Configuration: Raft
 # [Configuration: raft](https://github.com/openark/orchestrator/blob/master/docs/configuration-raft.md)
-本文讲述如何配置一个[[Orchestrator/raft, consensus cluster id=355cf04c-56ad-4501-943a-39bbbc59e3bf]]
+本文讲述如何配置一个[Orchestrator/raft, consensus cluster](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Setup/%E9%83%A8%E7%BD%B2/Orchestrator%20raft%2C%20consensus%20cluster.md)
 
  假设你要运行一个`3` 节点的`orchestrator/raft` 集群, 你将需要在每个节点进行以下配置:
 
