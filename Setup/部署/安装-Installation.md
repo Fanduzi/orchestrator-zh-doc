@@ -39,6 +39,7 @@ CREATE USER 'orchestrator'@'127.0.0.1' IDENTIFIED BY 'orch_backend_password';
 GRANT ALL PRIVILEGES ON `orchestrator`.* TO 'orchestrator'@'127.0.0.1';
 ```
 `Orchestrator`使用一个配置文件, 位于`/etc/orchestrator.conf.json`或`/${orchestrator软件路径}/conf/orchestrator.conf.json` 或 `./orchestrator.conf.json`.
+> 除非显式指定-config参数, 否则orchestrator会在以上位置找按顺序读取配置文件: `config.Read("/etc/orchestrator.conf.json", "conf/orchestrator.conf.json", "orchestrator.conf.json")` . 会读取所有文件(无论有没有), 后面的配置文件会覆盖前面配置文件中的参数配置
 
 提示: 安装的软件包包括一个名为`orchestrator.conf.json.sample`的文件, 其中有一些基本设置, 你可以将其作为`orchestrator.conf.json`的基线. 它可以在`/usr/local/orchestrator/orchestrator-sample.conf.json`中找到, 你也可以找到`/usr/local/orchestrator/orchestrator-sample-sqlite.conf.json`, 它有一个面向SQLite的配置. 这些样本文件也可以在[orchestrator资源库](https://github.com/openark/orchestrator/tree/master/conf)中找到.
 
