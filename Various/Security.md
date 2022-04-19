@@ -24,7 +24,7 @@
  "HTTPAuthUser":         "dba_team",
  "HTTPAuthPassword":     "time_for_dinner"
 ```
-`multi` authentication的工作方式与*basic authentication*类似, 单但也接收用户使用`readonly`用户并指定任意密码连接. `readonly`用户被允许查看所有内容, 但不能通过API进行写操作（如停止复制、重新指定(repointing)复制、发现新实例等）.
+`multi` authentication的工作方式与*basic authentication*类似, 但也接收用户使用`readonly`用户并指定任意密码连接. `readonly`用户被允许查看所有内容, 但不能通过API进行写操作（如停止复制、重新指定(repointing)复制、发现新实例等）.
 
 * *Headers authentication*
 通过反向代理转发的header进行身份验证（例如，Apache2 将请求中继到协调器）.  需要配置：

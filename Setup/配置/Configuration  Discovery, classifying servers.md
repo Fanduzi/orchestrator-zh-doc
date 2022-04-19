@@ -19,7 +19,7 @@
 通过`ReplicationLagQuery` 参数, 你可以定义获取复制延迟的语句
 
 ### Cluster alias
-在实际工作中, 集群名字往往是认为定义的, 例如:  "Main", "Analytics", "Shard031" 等. 然而, MySQL集群本身不知道自己的集群名称是什么.
+在实际工作中, 集群名字往往是人为定义的, 例如:  "Main", "Analytics", "Shard031" 等. 然而, MySQL集群本身不知道自己的集群名称是什么.
 
 `DetectClusterAliasQuery` 定一个查询, `orchestrator` 借此查询语句获取集群名称.
 
