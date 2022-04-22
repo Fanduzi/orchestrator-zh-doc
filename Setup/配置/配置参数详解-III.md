@@ -318,7 +318,7 @@ URL prefix to run orchestrator on non-root web path, e.g. /orchestrator to put i
 
 默认值: `[]string{}`
 
-Discovery从库时会忽略改列表中正则匹配的主机. 比如orch和列表中的从库网络不通, 导致无法完成发现, 或者类型DM, canal等伪装成slave的组件, 他们也不需要被"发现"
+Discovery从库时会忽略改该表中正则匹配的主机. 比如orch和列表中的从库网络不通, 导致无法完成发现, 或者类似DM, canal等伪装成slave的组件, 它们也不需要被"发现"
 
 > Regexp filters to apply to prevent auto-discovering new replicas. Usage: unreachable servers due to firewalls, applications which trigger binlog dumps
 
@@ -327,7 +327,7 @@ Discovery从库时会忽略改列表中正则匹配的主机. 比如orch和列�
 
 默认值: `[]string{}`
 
-Discovery主库时会忽略改列表中正则匹配的主机. 列入, 你的主库需要暂时从其他机器复制一些数据, 那么可以将该主库临时添加到这个列表
+Discovery主库时会忽略该列表中正则匹配的主机. 列入, 你的主库需要暂时从其他机器复制一些数据, 那么可以将该主库临时添加到这个列表
 
 > Regexp filters to apply to prevent auto-discovering a master. Usage: pointing your master temporarily to replicate some data from external host
 
@@ -336,7 +336,7 @@ Discovery主库时会忽略改列表中正则匹配的主机. 列入, 你的主�
 
 默认值: `[]string{}`
 
-Discovery时会忽略改列表中正则匹配的主机.
+Discovery时会忽略该列表中正则匹配的主机.
 
 > Regexp filters to apply to prevent discovering instances of any kind
 
