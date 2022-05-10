@@ -21,7 +21,7 @@
 这在跨数据中心(DC)的设置中变得非常有用. 假设你设置了三个`orchestrator`节点, 每个都在自己的DC上. 如果一个DC被隔离, 可以保证活动的`orchestrator`节点将是一个有共识的节点, 即从被隔离的DC之外操作( i.e. operates from outside the isolated DC).
 
 ### orchestrator/raft setup technical details 技术细节
-另见: [orchestrator/raft vs. synchronous replication setup](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Setup/部署/orchestrator%20raft%20vs.%20synchronous%20replication%20setup.md)
+另见: [orchestrator/raft vs. synchronous replication setup](https://github.com/Fanduzi/orchestrator-zh-doc/blob/master/Setup/部署/orchestrator%20raft%20vs.%20synchronous%20replication%20setup.md)
 
 #### Service nodes
 你将设置`3`个或`5`个(推荐raft节点数)`orchestrator`节点. 其他数字也是合法的, 但你将希望至少有3个.
@@ -57,7 +57,7 @@ Only the leader is allowed to make changes.
 
 最简单的设置是, 通过在`orchestrator`服务上设置一个`HTTP`代理(如HAProxy), 只将流量路由到领导者.
 
-> 另一种方法请见[orchestrator-client](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Setup/%E9%83%A8%E7%BD%B2/Orchestrator%20raft%2C%20consensus%20cluster.md#orchestrator-client)
+> 另一种方法请见[orchestrator-client](https://github.com/Fanduzi/orchestrator-zh-doc/blob/master/Setup/%E9%83%A8%E7%BD%B2/Orchestrator%20raft%2C%20consensus%20cluster.md#orchestrator-client)
 
 * 使用`/api/leader-check` 做健康检查. 在任何时候, 最多只有一个`orchestrator`节点会以`HTTP 200/OK`回复该检查; 其他节点会以`HTTP 404/Not found` 回复.
    * Hint: 你可以使用, 例如, `/api/leader-check/503`是你明确希望获得503响应代码, 或类似的任何其他代码.
@@ -109,7 +109,7 @@ listen orchestrator
 #### orchestrator-client
 实现代理的另一种方法是使用`orchestrator-client`.
 
-[orchestrator-client](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Use/orchestrator-client.md)是一个shell脚本, 通过HTTP API访问`orchestrator` 服务, 并向用户提供一个命令行界面.
+[orchestrator-client](https://github.com/Fanduzi/orchestrator-zh-doc/blob/master/Use/orchestrator-client.md)是一个shell脚本, 通过HTTP API访问`orchestrator` 服务, 并向用户提供一个命令行界面.
 
 可以向`orchestrator-client`提供所有orchestrator API endpoints的完整列表. 在这种情况下, `orchestrator-client`会找出哪个endpoints是leader, 并将请求指向该endpoints.
 
@@ -142,14 +142,14 @@ The *leader* will also educate its followers about ongoing failovers.
 
 * 所有用户变更必须通过leader, 尤其是通过`HTTP API`. 你不能直接操作后台数据库, 因为这样的改变不会被发布到其他节点.
 * 因此, 在`orchestrator/raft`上, 人们不能在命令行模式下使用`orchestrator` 命令: 当raft模式被启用时, 试图运行orchestrator cli将被拒绝. 我们正在进行的一些开发工作是允许一些命令通过cli运行.
-* 有一个实用脚本, 即[orchestrator-client](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Use/orchestrator-client.md), 它提供了与`orchestrator`命令类似的接口, 并使用和操作`HTTP API` .
+* 有一个实用脚本, 即[orchestrator-client](https://github.com/Fanduzi/orchestrator-zh-doc/blob/master/Use/orchestrator-client.md), 它提供了与`orchestrator`命令类似的接口, 并使用和操作`HTTP API` .
 * 只需在`orchestrator`服务节点上安装`orchestrator`二进制文件即可, 无需在其他地方安装. 而`orchestrator-client`可以安装在您希望安装的任何地方.
 * 单个`orchestrator`节点的故障将不会影响`orchestrator`的可用性. 在`3`个节点的集群中, 最多在只能有一个`orchestrator`节点发生故障. 在`5`个节点的设置中, 允许`2`个节点发生故障.
 * 如果没有后端数据库, `orchestrator`节点将无法运行. 对于使用 `sqlite` 后端, 这是微不足道的(感觉意思是使用sqlite几乎不用担心数据库故障引发orchestrator panic), 因为 `sqlite` 嵌入在 `orchestrator`中一起运行.  如果使用 `MySQL` 作为后端数据库,  假设在一段时间内`orchestrator`无法连接到后端 DB, 那么 `orchestrator` 服务将退出.
 * `orchestrator`节点可能会宕机, 然后恢复. (当它恢复时)它将重新加入`raft`组, 并接收它在离开时错过的任何事件. 节点离开多长时间并不重要. 如果它没有相关的本地`raft`log/snapshots, 另一个节点将自动为它提供最近的快照.
 * 如果无法加入 `raft` 组, 那么 `orchestrator` 服务将退出.
 
-See also [KV and orchestrator/raft](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Failure%20detection%20%26%20recovery/Key-Value%20stores.md#kv-and-orchestratorraft) via `orchestrator/raft`.
+See also [KV and orchestrator/raft](https://github.com/Fanduzi/orchestrator-zh-doc/blob/master/Failure%20detection%20%26%20recovery/Key-Value%20stores.md#kv-and-orchestratorraft) via `orchestrator/raft`.
 
 ### Main advantages of orchestrator/raft 主要优势
 * 高可用

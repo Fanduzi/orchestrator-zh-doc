@@ -19,7 +19,7 @@
 ### Full listing
 完整的接口清单请见[api.go](https://github.com/openark/orchestrator/blob/master/go/http/api.go)(向下滚动到`RegisterRequests`)
 
-你可能还想看看[orchestrator-client](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Use/orchestrator-client.md)([source code](https://github.com/openark/orchestrator/blob/master/resources/bin/orchestrator-client)), 看看command line interface是如何转化为API调用的. 或者, 直接使用[orchestrator-client](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Use/orchestrator-client.md)作为你的API客户端, 这就是它的作用.
+你可能还想看看[orchestrator-client](https://github.com/Fanduzi/orchestrator-zh-doc/blob/master/Use/orchestrator-client.md)([source code](https://github.com/openark/orchestrator/blob/master/resources/bin/orchestrator-client)), 看看command line interface是如何转化为API调用的. 或者, 直接使用[orchestrator-client](https://github.com/Fanduzi/orchestrator-zh-doc/blob/master/Use/orchestrator-client.md)作为你的API客户端, 这就是它的作用.
 
 ### Instance JSON breakdown
 许多 API 调用返回 *instance objects*实例对象, 描述单个 MySQL server. 此示例之后是字段细分

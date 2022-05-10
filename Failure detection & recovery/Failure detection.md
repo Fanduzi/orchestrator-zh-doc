@@ -33,7 +33,7 @@
 
 在理想的情况下, 检测到故障后立即恢复. 在其他情况下, such as blocked recoveries, 恢复可能在检测后的许多分钟后进行.
 
-检测是独立于恢复的, 并且总是被启用.` OnFailureDetectionProcesses`钩子在每次检测时执行, 详见[Configuration: Failure detection](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Setup/配置/Configuration%20%20Failure%20detection.md)
+检测是独立于恢复的, 并且总是被启用.` OnFailureDetectionProcesses`钩子在每次检测时执行, 详见[Configuration: Failure detection](https://github.com/Fanduzi/orchestrator-zh-doc/blob/master/Setup/配置/Configuration%20%20Failure%20detection.md)
 
 ### Failure detection scenarios 故障检测场景
 请注意以下潜在故障列表:
@@ -135,11 +135,11 @@
 
 如果启用了 `RecoverLockedSemiSyncMaster`, 那么 `orchestrator` 将按优先级顺序在副本上启用（但永远不会禁用）半同步, 直到半同步副本的数量与`rpl_semi_sync_master_wait_for_slave_count`匹配. 请注意, 如果设置了 `EnforceExactSemiSyncReplicas`, 则 `RecoverLockedSemiSyncMaster` 无效.
 
-优先级顺序由 `DetectSemiSyncEnforcedQuery`（数字越大优先级越高）、提升规则 ([DetectPromotionRuleQuery](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Setup/%E9%85%8D%E7%BD%AE/%E9%85%8D%E7%BD%AE%E5%8F%82%E6%95%B0%E8%AF%A6%E8%A7%A3-%E2%85%A1.md#detectpromotionrulequery)) 和主机名（fallback）定义.
+优先级顺序由 `DetectSemiSyncEnforcedQuery`（数字越大优先级越高）、提升规则 ([DetectPromotionRuleQuery](https://github.com/Fanduzi/orchestrator-zh-doc/blob/master/Setup/%E9%85%8D%E7%BD%AE/%E9%85%8D%E7%BD%AE%E5%8F%82%E6%95%B0%E8%AF%A6%E8%A7%A3-%E2%85%A1.md#detectpromotionrulequery)) 和主机名（fallback）定义.
 
 如果 `EnforceExactSemiSyncReplicas` 和 `RecoverLockedSemiSyncMaster` 均已禁用（默认）, 则 `orchestrator` 不会为此类分析调用任何恢复过程.
 
-另请参阅[Semi-sync topology](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Setup/%E9%85%8D%E7%BD%AE/Configuration%20%20Discovery%2C%20classifying%20servers.md#semi-sync-topology)文档以获取更多详细信息.
+另请参阅[Semi-sync topology](https://github.com/Fanduzi/orchestrator-zh-doc/blob/master/Setup/%E9%85%8D%E7%BD%AE/Configuration%20%20Discovery%2C%20classifying%20servers.md#semi-sync-topology)文档以获取更多详细信息.
 
 #### `MasterWithTooManySemiSyncReplicas`
 1. 主库启用了半同步(rpl\_semi\_sync\_master\_enabled=1)
@@ -151,11 +151,11 @@
 
 如果启用了 `EnforceExactSemiSyncReplicas`, 那么 `orchestrator` 将确定所需的半同步拓扑并启用/禁用副本上的半同步(参数)以匹配它. 所需的拓扑由优先级顺序和`rpl_semi_sync_master_timeout`定义.
 
-优先级顺序由 `DetectSemiSyncEnforcedQuery`（数字越大优先级越高）、提升规则 ([DetectPromotionRuleQuery](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Setup/%E9%85%8D%E7%BD%AE/%E9%85%8D%E7%BD%AE%E5%8F%82%E6%95%B0%E8%AF%A6%E8%A7%A3-%E2%85%A1.md#detectpromotionrulequery)) 和主机名（fallback）定义.
+优先级顺序由 `DetectSemiSyncEnforcedQuery`（数字越大优先级越高）、提升规则 ([DetectPromotionRuleQuery](https://github.com/Fanduzi/orchestrator-zh-doc/blob/master/Setup/%E9%85%8D%E7%BD%AE/%E9%85%8D%E7%BD%AE%E5%8F%82%E6%95%B0%E8%AF%A6%E8%A7%A3-%E2%85%A1.md#detectpromotionrulequery)) 和主机名（fallback）定义.
 
 如果`EnforceExactSemiSyncReplicas`被禁用（默认）, `orchestrator`不会为这种类型的分析调用任何恢复进程。
 
-另请参阅[Semi-sync topology](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Setup/%E9%85%8D%E7%BD%AE/Configuration%20%20Discovery%2C%20classifying%20servers.md#semi-sync-topology)文档以获取更多详细信息.
+另请参阅[Semi-sync topology](https://github.com/Fanduzi/orchestrator-zh-doc/blob/master/Setup/%E9%85%8D%E7%BD%AE/Configuration%20%20Discovery%2C%20classifying%20servers.md#semi-sync-topology)文档以获取更多详细信息.
 
 ### Failures of no interest
 以下场景对 `orchestrator` 来说不感兴趣, 虽然信息和状态可供 `orchestrator` 使用, 但它本身并不识别此类场景为故障; 没有调用检测钩子, 显然也没有尝试恢复:
@@ -174,4 +174,4 @@
 * Web API: `/api/replication-analysis`
 * Web: `/web/clusters-analysis/` page (`Clusters`->`Failure analysis`). 这提供了一个不完整的问题列表, 只突出了可操作的问题.
 
-Read next: [Topology recovery](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Failure%20detection%20%26%20recovery/Topology%20recovery.md)
+Read next: [Topology recovery](https://github.com/Fanduzi/orchestrator-zh-doc/blob/master/Failure%20detection%20%26%20recovery/Topology%20recovery.md)

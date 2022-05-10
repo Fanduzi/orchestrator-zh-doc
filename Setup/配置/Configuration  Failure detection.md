@@ -4,7 +4,7 @@
 
 >  [Failure detection](Failure%20detection%20%26%20recovery/Failure%20detection.md)
 
-恢复将在[Configuration: Recovery](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Setup/配置/Configuration%20%20Recovery.md)中讨论
+恢复将在[Configuration: Recovery](https://github.com/Fanduzi/orchestrator-zh-doc/blob/master/Setup/配置/Configuration%20%20Recovery.md)中讨论
 
 ```yaml
 {
@@ -25,7 +25,7 @@
   ],
 }
 ```
-有许多神奇的变量(如上面的`{failureCluster}`), 你可以发送给你的外部钩子. 完整列表请见[Topology recovery](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Failure%20detection%20%26%20recovery/Topology%20recovery.md)
+有许多神奇的变量(如上面的`{failureCluster}`), 你可以发送给你的外部钩子. 完整列表请见[Topology recovery](https://github.com/Fanduzi/orchestrator-zh-doc/blob/master/Failure%20detection%20%26%20recovery/Topology%20recovery.md)
 
 ### MySQL configuration
 由于故障检测使用MySQL拓扑结构本身作为信息来源, 因此建议你设置你的MySQL复制, 以便错误将被清楚地显示或快速地缓解.

@@ -8,14 +8,14 @@
 
 > Should orchestrator take upon itself to apply MySQL master promotion: set read\_only=0, detach replication, etc.
 
-另见[Configuration: Recovery](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Setup/配置/Configuration%20%20Recovery.md)
+另见[Configuration: Recovery](https://github.com/Fanduzi/orchestrator-zh-doc/blob/master/Setup/配置/Configuration%20%20Recovery.md)
 
 ## PreventCrossDataCenterMasterFailover
 类型: `bool`
 
 默认值: `false`
 
-默认`false` . 当为`true` 时, `orchestrator`将只用与故障集群主库位于同一DC的从库替换故障的主库. 它将尽最大努力从同一DC中找到一个替代者, 如果找不到, 将中止（失败）故障转移. 另请参阅[DetectDataCenterQuery](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Setup/%E9%85%8D%E7%BD%AE/%E9%85%8D%E7%BD%AE%E5%8F%82%E6%95%B0%E8%AF%A6%E8%A7%A3-%E2%85%A1.md#detectdatacenterquery)和[DataCenterPattern](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Setup/%E9%85%8D%E7%BD%AE/%E9%85%8D%E7%BD%AE%E5%8F%82%E6%95%B0%E8%AF%A6%E8%A7%A3-%E2%85%A1.md#datacenterpattern)配置变量.
+默认`false` . 当为`true` 时, `orchestrator`将只用与故障集群主库位于同一DC的从库替换故障的主库. 它将尽最大努力从同一DC中找到一个替代者, 如果找不到, 将中止（失败）故障转移. 另请参阅[DetectDataCenterQuery](https://github.com/Fanduzi/orchestrator-zh-doc/blob/master/Setup/%E9%85%8D%E7%BD%AE/%E9%85%8D%E7%BD%AE%E5%8F%82%E6%95%B0%E8%AF%A6%E8%A7%A3-%E2%85%A1.md#detectdatacenterquery)和[DataCenterPattern](https://github.com/Fanduzi/orchestrator-zh-doc/blob/master/Setup/%E9%85%8D%E7%BD%AE/%E9%85%8D%E7%BD%AE%E5%8F%82%E6%95%B0%E8%AF%A6%E8%A7%A3-%E2%85%A1.md#datacenterpattern)配置变量.
 
 > When true (default: false), cross-DC master failover are not allowed, orchestrator will do all it can to only fail over within same DC, or else not fail over at all.
 
@@ -24,7 +24,7 @@
 
 默认值: `false`
 
-默认`false` . 当为`true` 时, `orchestrator`将只用与故障集群主库位于同一region的从库替换故障的主库. 它将尽最大努力找到同一region的替代者, 如果找不到, 将中止（失败）故障转移. 另请参阅[DetectRegionQuery](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Setup/%E9%85%8D%E7%BD%AE/%E9%85%8D%E7%BD%AE%E5%8F%82%E6%95%B0%E8%AF%A6%E8%A7%A3-%E2%85%A1.md#detectregionquery)和[RegionPattern](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Setup/%E9%85%8D%E7%BD%AE/%E9%85%8D%E7%BD%AE%E5%8F%82%E6%95%B0%E8%AF%A6%E8%A7%A3-%E2%85%A1.md#regionpattern)配置变量.
+默认`false` . 当为`true` 时, `orchestrator`将只用与故障集群主库位于同一region的从库替换故障的主库. 它将尽最大努力找到同一region的替代者, 如果找不到, 将中止（失败）故障转移. 另请参阅[DetectRegionQuery](https://github.com/Fanduzi/orchestrator-zh-doc/blob/master/Setup/%E9%85%8D%E7%BD%AE/%E9%85%8D%E7%BD%AE%E5%8F%82%E6%95%B0%E8%AF%A6%E8%A7%A3-%E2%85%A1.md#detectregionquery)和[RegionPattern](https://github.com/Fanduzi/orchestrator-zh-doc/blob/master/Setup/%E9%85%8D%E7%BD%AE/%E9%85%8D%E7%BD%AE%E5%8F%82%E6%95%B0%E8%AF%A6%E8%A7%A3-%E2%85%A1.md#regionpattern)配置变量.
 
 > When true (default: false), cross-region master failover are not allowed, orchestrator will do all it can to only fail over within same region, or else not fail over at all.
 
@@ -46,14 +46,14 @@
 
 默认值: `false`
 
-当该参数为`true` 时, `orchestrator`将对被选举为新主库的节点执行`detach-replica-master-host`（这确保了即使旧主库"复活了", 新主库也不会试图从旧主库复制数据）. 默认值: `false`. 如果[ApplyMySQLPromotionAfterMasterFailover](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Setup/%E9%85%8D%E7%BD%AE/%E9%85%8D%E7%BD%AE%E5%8F%82%E6%95%B0%E8%AF%A6%E8%A7%A3-III.md#applymysqlpromotionaftermasterfailover)为真，这个参数将失去意义. [MasterFailoverDetachReplicaMasterHost](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Setup/%E9%85%8D%E7%BD%AE/%E9%85%8D%E7%BD%AE%E5%8F%82%E6%95%B0%E8%AF%A6%E8%A7%A3-III.md#masterfailoverdetachreplicamasterhost)是它的一个别名.
+当该参数为`true` 时, `orchestrator`将对被选举为新主库的节点执行`detach-replica-master-host`（这确保了即使旧主库"复活了", 新主库也不会试图从旧主库复制数据）. 默认值: `false`. 如果[ApplyMySQLPromotionAfterMasterFailover](https://github.com/Fanduzi/orchestrator-zh-doc/blob/master/Setup/%E9%85%8D%E7%BD%AE/%E9%85%8D%E7%BD%AE%E5%8F%82%E6%95%B0%E8%AF%A6%E8%A7%A3-III.md#applymysqlpromotionaftermasterfailover)为真，这个参数将失去意义. [MasterFailoverDetachReplicaMasterHost](https://github.com/Fanduzi/orchestrator-zh-doc/blob/master/Setup/%E9%85%8D%E7%BD%AE/%E9%85%8D%E7%BD%AE%E5%8F%82%E6%95%B0%E8%AF%A6%E8%A7%A3-III.md#masterfailoverdetachreplicamasterhost)是它的一个别名.
 
 ## MasterFailoverDetachReplicaMasterHost
 类型: `bool`
 
 默认值: `false`
 
-当该参数为`true` 时, `orchestrator`将对被选举为新主库的节点执行`detach-replica-master-host`（这确保了即使旧主库"复活了", 新主库也不会试图从旧主库复制数据）. 默认值: `false`. 如果[ApplyMySQLPromotionAfterMasterFailover](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Setup/%E9%85%8D%E7%BD%AE/%E9%85%8D%E7%BD%AE%E5%8F%82%E6%95%B0%E8%AF%A6%E8%A7%A3-III.md#applymysqlpromotionaftermasterfailover)为真，这个参数将失去意义.
+当该参数为`true` 时, `orchestrator`将对被选举为新主库的节点执行`detach-replica-master-host`（这确保了即使旧主库"复活了", 新主库也不会试图从旧主库复制数据）. 默认值: `false`. 如果[ApplyMySQLPromotionAfterMasterFailover](https://github.com/Fanduzi/orchestrator-zh-doc/blob/master/Setup/%E9%85%8D%E7%BD%AE/%E9%85%8D%E7%BD%AE%E5%8F%82%E6%95%B0%E8%AF%A6%E8%A7%A3-III.md#applymysqlpromotionaftermasterfailover)为真，这个参数将失去意义.
 
 > Should orchestrator issue a detach-replica-master-host on newly promoted master (this makes sure the new master will not attempt to replicate old master if that comes back to life). Defaults 'false'. Meaningless if ApplyMySQLPromotionAfterMasterFailover is 'true'.
 
@@ -80,7 +80,7 @@
 
 默认值: `false`
 
-如果在故障发生时, 所有的从库都是滞后的, 即使是拥有最新数据的、被选举为新主库的候选节点也可能有未应用的中继日志. 当该参数为`true` 时, `orchestrator` 将等待SQL thread应用完所有relay log, 然后再将候选从库提升为新主库. [FailMasterPromotionIfSQLThreadNotUpToDate](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Setup/%E9%85%8D%E7%BD%AE/%E9%85%8D%E7%BD%AE%E5%8F%82%E6%95%B0%E8%AF%A6%E8%A7%A3-III.md#failmasterpromotionifsqlthreadnotuptodate)和[DelayMasterPromotionIfSQLThreadNotUpToDate](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Setup/%E9%85%8D%E7%BD%AE/%E9%85%8D%E7%BD%AE%E5%8F%82%E6%95%B0%E8%AF%A6%E8%A7%A3-III.md#delaymasterpromotionifsqlthreadnotuptodate)是相互排斥的.
+如果在故障发生时, 所有的从库都是滞后的, 即使是拥有最新数据的、被选举为新主库的候选节点也可能有未应用的中继日志. 当该参数为`true` 时, `orchestrator` 将等待SQL thread应用完所有relay log, 然后再将候选从库提升为新主库. [FailMasterPromotionIfSQLThreadNotUpToDate](https://github.com/Fanduzi/orchestrator-zh-doc/blob/master/Setup/%E9%85%8D%E7%BD%AE/%E9%85%8D%E7%BD%AE%E5%8F%82%E6%95%B0%E8%AF%A6%E8%A7%A3-III.md#failmasterpromotionifsqlthreadnotuptodate)和[DelayMasterPromotionIfSQLThreadNotUpToDate](https://github.com/Fanduzi/orchestrator-zh-doc/blob/master/Setup/%E9%85%8D%E7%BD%AE/%E9%85%8D%E7%BD%AE%E5%8F%82%E6%95%B0%E8%AF%A6%E8%A7%A3-III.md#delaymasterpromotionifsqlthreadnotuptodate)是相互排斥的.
 
 > when true, and a master failover takes place, if candidate master has not consumed all relay logs, delay promotion until the sql thread has caught up
 
@@ -89,7 +89,7 @@
 
 默认值: `0`
 
-在崩溃恢复时, 延迟超过给定分钟的副本只会在恢复过程的后期恢复, 在 master/intermediate master 被选择并执行进程之后.  值 0 禁用此功能.  默认值: 0.  是[PostponeReplicaRecoveryOnLagMinutes](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Setup/%E9%85%8D%E7%BD%AE/%E9%85%8D%E7%BD%AE%E5%8F%82%E6%95%B0%E8%AF%A6%E8%A7%A3-III.md#postponereplicarecoveryonlagminutes)的别名.
+在崩溃恢复时, 延迟超过给定分钟的副本只会在恢复过程的后期恢复, 在 master/intermediate master 被选择并执行进程之后.  值 0 禁用此功能.  默认值: 0.  是[PostponeReplicaRecoveryOnLagMinutes](https://github.com/Fanduzi/orchestrator-zh-doc/blob/master/Setup/%E9%85%8D%E7%BD%AE/%E9%85%8D%E7%BD%AE%E5%8F%82%E6%95%B0%E8%AF%A6%E8%A7%A3-III.md#postponereplicarecoveryonlagminutes)的别名.
 
 ## PostponeReplicaRecoveryOnLagMinutes
 类型: `uint`
@@ -368,7 +368,7 @@ ACL token used to write to Consul KV
 
 默认值: `false`
 
-详见[Consul specific](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Failure%20detection%20%26%20recovery/Key-Value%20stores.md#consul-specific)
+详见[Consul specific](https://github.com/Fanduzi/orchestrator-zh-doc/blob/master/Failure%20detection%20%26%20recovery/Key-Value%20stores.md#consul-specific)
 
 > should orchestrator automatically auto-deduce all consul DCs and write KVs in all DCs
 
@@ -377,7 +377,7 @@ ACL token used to write to Consul KV
 
 默认值: `consul`
 
-详见[Consul Transaction support](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Failure%20detection%20%26%20recovery/Key-Value%20stores.md#consul-transaction-support)
+详见[Consul Transaction support](https://github.com/Fanduzi/orchestrator-zh-doc/blob/master/Failure%20detection%20%26%20recovery/Key-Value%20stores.md#consul-transaction-support)
 
 > Consul KV store provider (consul or consul-txn), default: "consul"
 
@@ -386,7 +386,7 @@ ACL token used to write to Consul KV
 
 默认值: `5`
 
-详见[Consul Transaction support](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Failure%20detection%20%26%20recovery/Key-Value%20stores.md#consul-transaction-support)
+详见[Consul Transaction support](https://github.com/Fanduzi/orchestrator-zh-doc/blob/master/Failure%20detection%20%26%20recovery/Key-Value%20stores.md#consul-transaction-support)
 
 > Maximum number of KV operations to perform in a single Consul Transaction. Requires the "consul-txn" ConsulKVStoreProvider
 
@@ -441,23 +441,23 @@ PR [https://github.com/openark/orchestrator/pull/1100](https://github.com/openar
 
 > If true, semi-sync replicas will be enabled/disabled to match the wait count in the desired priority order; this applies to LockedSemiSyncMaster and MasterWithTooManySemiSyncReplicas
 
-另见[Semi-sync replicas (rpl\_semi\_sync\_slave\_enabled)](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Setup/%E9%85%8D%E7%BD%AE/Configuration%20%20Discovery%2C%20classifying%20servers.md#semi-sync-replicas-rpl_semi_sync_slave_enabled) 和 [Failure detection](Failure%20detection%20%26%20recovery/Failure%20detection.md)
+另见[Semi-sync replicas (rpl\_semi\_sync\_slave\_enabled)](https://github.com/Fanduzi/orchestrator-zh-doc/blob/master/Setup/%E9%85%8D%E7%BD%AE/Configuration%20%20Discovery%2C%20classifying%20servers.md#semi-sync-replicas-rpl_semi_sync_slave_enabled) 和 [Failure detection](Failure%20detection%20%26%20recovery/Failure%20detection.md)
 
 ## RecoverLockedSemiSyncMaster
 类型: `bool`
 
 默认值: `false`
 
-决定是否从`LockedSemiSyncMaster`情况下恢复的标志. 如果启用, `LockedSemiSyncMaster`的恢复将按照优先级顺序在副本上启用（但绝不会禁用）半同步, 以匹配主库的等待计数(rpl\_semi\_sync\_master\_wait\_for\_slave\_count). 如果[EnforceExactSemiSyncReplicas](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Setup/%E9%85%8D%E7%BD%AE/%E9%85%8D%E7%BD%AE%E5%8F%82%E6%95%B0%E8%AF%A6%E8%A7%A3-III.md#enforceexactsemisyncreplicas)被设置了, 这个选项就没有效果. 如果你想只处理半同步复制太少的情况, 而不是太多的话, 这个选项很有用.
+决定是否从`LockedSemiSyncMaster`情况下恢复的标志. 如果启用, `LockedSemiSyncMaster`的恢复将按照优先级顺序在副本上启用（但绝不会禁用）半同步, 以匹配主库的等待计数(rpl\_semi\_sync\_master\_wait\_for\_slave\_count). 如果[EnforceExactSemiSyncReplicas](https://github.com/Fanduzi/orchestrator-zh-doc/blob/master/Setup/%E9%85%8D%E7%BD%AE/%E9%85%8D%E7%BD%AE%E5%8F%82%E6%95%B0%E8%AF%A6%E8%A7%A3-III.md#enforceexactsemisyncreplicas)被设置了, 这个选项就没有效果. 如果你想只处理半同步复制太少的情况, 而不是太多的话, 这个选项很有用.
 
 > If true, orchestrator will recover from a LockedSemiSync state by enabling semi-sync on replicas to match the wait count; this behavior can be overridden by EnforceExactSemiSyncReplicas
 
-另见[Semi-sync replicas (rpl\_semi\_sync\_slave\_enabled)](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Setup/%E9%85%8D%E7%BD%AE/Configuration%20%20Discovery%2C%20classifying%20servers.md#semi-sync-replicas-rpl_semi_sync_slave_enabled) 和 [Failure detection](Failure%20detection%20%26%20recovery/Failure%20detection.md)
+另见[Semi-sync replicas (rpl\_semi\_sync\_slave\_enabled)](https://github.com/Fanduzi/orchestrator-zh-doc/blob/master/Setup/%E9%85%8D%E7%BD%AE/Configuration%20%20Discovery%2C%20classifying%20servers.md#semi-sync-replicas-rpl_semi_sync_slave_enabled) 和 [Failure detection](Failure%20detection%20%26%20recovery/Failure%20detection.md)
 
 ## ReasonableLockedSemiSyncMasterSeconds
 类型: `uint`
 
-默认值: 与[ReasonableReplicationLagSeconds](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Setup/%E9%85%8D%E7%BD%AE/%E9%85%8D%E7%BD%AE%E5%8F%82%E6%95%B0%E8%AF%A6%E8%A7%A3-%E2%85%A0.md#reasonablereplicationlagseconds)相同
+默认值: 与[ReasonableReplicationLagSeconds](https://github.com/Fanduzi/orchestrator-zh-doc/blob/master/Setup/%E9%85%8D%E7%BD%AE/%E9%85%8D%E7%BD%AE%E5%8F%82%E6%95%B0%E8%AF%A6%E8%A7%A3-%E2%85%A0.md#reasonablereplicationlagseconds)相同
 
 触发`LockedSemiSyncMaster`条件的秒数; 如果没有设置, 则退回到`ReasonableReplicationLagSeconds` .
 
@@ -468,4 +468,4 @@ PR [https://github.com/openark/orchestrator/pull/1100](https://github.com/openar
         this.ReasonableLockedSemiSyncMasterSeconds = uint(this.ReasonableReplicationLagSeconds)
     }
 ```
-另见[Semi-sync replicas (rpl\_semi\_sync\_slave\_enabled)](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Setup/%E9%85%8D%E7%BD%AE/Configuration%20%20Discovery%2C%20classifying%20servers.md#semi-sync-replicas-rpl_semi_sync_slave_enabled) 和 [Failure detection](Failure%20detection%20%26%20recovery/Failure%20detection.md)
+另见[Semi-sync replicas (rpl\_semi\_sync\_slave\_enabled)](https://github.com/Fanduzi/orchestrator-zh-doc/blob/master/Setup/%E9%85%8D%E7%BD%AE/Configuration%20%20Discovery%2C%20classifying%20servers.md#semi-sync-replicas-rpl_semi_sync_slave_enabled) 和 [Failure detection](Failure%20detection%20%26%20recovery/Failure%20detection.md)

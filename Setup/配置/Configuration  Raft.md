@@ -1,6 +1,6 @@
 # Configuration: Raft
 # [Configuration: raft](https://github.com/openark/orchestrator/blob/master/docs/configuration-raft.md)
-本文讲述如何配置一个[Orchestrator/raft, consensus cluster](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Setup/%E9%83%A8%E7%BD%B2/Orchestrator%20raft%2C%20consensus%20cluster.md)
+本文讲述如何配置一个[Orchestrator/raft, consensus cluster](https://github.com/Fanduzi/orchestrator-zh-doc/blob/master/Setup/%E9%83%A8%E7%BD%B2/Orchestrator%20raft%2C%20consensus%20cluster.md)
 
  假设你要运行一个`3` 节点的`orchestrator/raft` 集群, 你将需要在每个节点进行以下配置:
 
@@ -63,7 +63,7 @@ raft节点将反向代理HTTP请求, `orchestrator`将尝试启发式地计算�
 明确指定节点（假设它是领导者）将通过 HTTP API 访问的位置.  例如, 您可以配置:  `"HTTPAdvertise": "http://my.public.hostname:3000"`
 
 ### Backend DB
-raft模式支持`MySQL`或`SQLite`作为后端数据库. 详见[Configuration: Backend](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Setup/配置/Configuration%20%20Backend.md). 阅读[Orchestrator高可用](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Deployment/Orchestrator高可用.md), 了解使用这两种方法的情景、可能性和理由.
+raft模式支持`MySQL`或`SQLite`作为后端数据库. 详见[Configuration: Backend](https://github.com/Fanduzi/orchestrator-zh-doc/blob/master/Setup/配置/Configuration%20%20Backend.md). 阅读[Orchestrator高可用](https://github.com/Fanduzi/orchestrator-zh-doc/blob/master/Deployment/Orchestrator高可用.md), 了解使用这两种方法的情景、可能性和理由.
 
 ### Single raft node setups
 在生产中, 你会希望使用多个raft节点, 如`3`个或`5`个.

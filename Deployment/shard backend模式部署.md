@@ -1,8 +1,8 @@
 # shard backend模式部署
 # [Orchestrator deployment: shared backend](https://github.com/openark/orchestrator/blob/master/docs/deployment-shared-backend.md)
-本文描述了shared backend数据库的部署方法. 有关各种后端DB设置，请参阅[Orchestrator高可用](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Deployment/Orchestrator高可用.md).
+本文描述了shared backend数据库的部署方法. 有关各种后端DB设置，请参阅[Orchestrator高可用](https://github.com/Fanduzi/orchestrator-zh-doc/blob/master/Deployment/Orchestrator高可用.md).
 
-这篇文的完善了[在生产环境中部署Orchestrator](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Deployment/在生产环境中部署Orchestrator.md).
+这篇文的完善了[在生产环境中部署Orchestrator](https://github.com/Fanduzi/orchestrator-zh-doc/blob/master/Deployment/在生产环境中部署Orchestrator.md).
 
 ### Shared backend
 你将需要创建一个shared backend database. 这可以是同步复制(Galera/XtraDB Cluster/InnoDB Cluster), 以实现高可用性, 也可以是主从复制.
@@ -33,7 +33,7 @@
 为了通过shell/automation/scripts与`orchestrator`进行交互, 你可以选择:
 
 * 直接与HTTP API交互
-* 使用[orchestrator-client](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Use/orchestrator-client.md)脚本([orchestrator-client](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Use/orchestrator-client.md)本质是一个shell脚本).
+* 使用[orchestrator-client](https://github.com/Fanduzi/orchestrator-zh-doc/blob/master/Use/orchestrator-client.md)脚本([orchestrator-client](https://github.com/Fanduzi/orchestrator-zh-doc/blob/master/Use/orchestrator-client.md)本质是一个shell脚本).
    * 将`orchestrator-client`部署在你希望与`orchestrator`交互的任何盒子上.
    * Create and edit `/etc/profile.d/orchestrator-client.sh` on those boxes to read:
 
@@ -51,7 +51,7 @@ ORCHESTRATOR_API="http://your.orchestrator.service.host1:3000/api http://your.or
 
 确保 chef/puppet/whatever 的 `ORCHESTRATOR_API` 值能够适应环境的变化.
 
-* [orchestrator命令](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Use/Executing%20via%20command%20line.md)
+* [orchestrator命令](https://github.com/Fanduzi/orchestrator-zh-doc/blob/master/Use/Executing%20via%20command%20line.md)
    * 将`orchestrator`二进制文件（你可以使用`orchestrator-cli`distributed package）部署在你希望与`orchestrator`互动的任何盒子上.
    * 在这些盒子上创建`/etc/orchestrator.conf.json`，用证书填充(populate with credentials). 该文件一般应与`orchestrator`服务盒的文件相同. 如果你不确定, 请使用完全相同的文件内容.
    * `orchestrator`命令将访问共享的后端数据库. 请确保给予它访问权. 通常情况下, 这将是3306端口.
@@ -78,7 +78,7 @@ In a shared-backend deployment, 你可以根据你的需求部署所需数量的
 * Run arbitrary command (e.g. `relocate`, `begin-downtime`)  (运行任意命令?)
 
 * Run recoveries per human request. (按人的要求运行恢复)
-有关部署多个节点的详细信息，请阅读有关[Orchestrator高可用](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Deployment/Orchestrator高可用.md)的内容.
+有关部署多个节点的详细信息，请阅读有关[Orchestrator高可用](https://github.com/Fanduzi/orchestrator-zh-doc/blob/master/Deployment/Orchestrator高可用.md)的内容.
 
 ### Orchestrator CLI
 CLI执行以完成特定的操作. 它可以选择探测一些服务器, 这取决于操作(e.g. `relocate`), 也可以根本不探测服务器, 只从后端数据库读取数据.

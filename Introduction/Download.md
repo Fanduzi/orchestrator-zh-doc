@@ -8,4 +8,4 @@ For developers: `orchestrator` is go-gettable. Issue:
 ```Plain Text
 go get github.com/openark/orchestrator/...
 ```
-See [Developers](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Developers/Developers.md)
+See [Developers](https://github.com/Fanduzi/orchestrator-zh-doc/blob/master/Developers/Developers.md)

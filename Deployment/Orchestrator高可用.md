@@ -5,10 +5,10 @@
 ### TL;DR 实现高可用的方式
 HA是通过选择以下其中之一实现的:
 
-* `orchestrator/raft` 模式, `orchestrator`节点间通过raft共识算法通信. 每个`orchestrator`节点都有一个私有的数据库, `MySQL` 或`sqlite` . 另见 [Orchestrator/raft, consensus cluster](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Setup/部署/Orchestrator%20raft%2C%20consensus%20cluster.md)
+* `orchestrator/raft` 模式, `orchestrator`节点间通过raft共识算法通信. 每个`orchestrator`节点都有一个私有的数据库, `MySQL` 或`sqlite` . 另见 [Orchestrator/raft, consensus cluster](https://github.com/Fanduzi/orchestrator-zh-doc/blob/master/Setup/部署/Orchestrator%20raft%2C%20consensus%20cluster.md)
 * 共享存储(Shared backend)模式. 多个`orchestrator` 节点使用一个后端数据库, 可能是Galera/XtraDB Cluster/InnoDB Cluster/NDB Cluster. (orchestrator的)数据是在数据库层级实现同步的.
 
-另见 [orchestrator/raft vs. synchronous replication setup](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Setup/部署/orchestrator%20raft%20vs.%20synchronous%20replication%20setup.md)
+另见 [orchestrator/raft vs. synchronous replication setup](https://github.com/Fanduzi/orchestrator-zh-doc/blob/master/Setup/部署/orchestrator%20raft%20vs.%20synchronous%20replication%20setup.md)
 
 ### 高可用类型
 你可以根据你的需求，选择不同的可用性类型.
@@ -94,10 +94,10 @@ HA是通过后端数据库的高可用实现的. 现有的解决方案是:
 
 * Use `/api/leader-check` as HTTP health check for your proxy.
 
-* 或者对多个`orchestrator`后端使用[orchestrator-client](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Use/orchestrator-client.md); `orchestrator-client`将找出leader并将请求发送给它.
+* 或者对多个`orchestrator`后端使用[orchestrator-client](https://github.com/Fanduzi/orchestrator-zh-doc/blob/master/Use/orchestrator-client.md); `orchestrator-client`将找出leader并将请求发送给它.
 
 ![image](images/dlnTL2c8qw-wWm2A91Y7zuMz0j-RLHGMH9FWPQlPJ9s.png)
 
-`orchestrator/raft`是一个较新的开发项目, 目前正在生产中进行测试. 请阅读[Orchestrator/raft, consensus cluster](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Setup/部署/Orchestrator%20raft%2C%20consensus%20cluster.md)以获取更多信息.
+`orchestrator/raft`是一个较新的开发项目, 目前正在生产中进行测试. 请阅读[Orchestrator/raft, consensus cluster](https://github.com/Fanduzi/orchestrator-zh-doc/blob/master/Setup/部署/Orchestrator%20raft%2C%20consensus%20cluster.md)以获取更多信息.
 
 > 译者注: 上面这句话是5年前写的了, 可以查看这篇文档的提交记录.

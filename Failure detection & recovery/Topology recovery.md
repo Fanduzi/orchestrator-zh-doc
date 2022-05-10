@@ -1,28 +1,28 @@
 # Topology recovery
 # [Topology recovery](https://github.com/openark/orchestrator/blob/master/docs/topology-recovery.md)
-`orchestrator`能够从一系列的故障场景([Failure detection scenarios 故障检测场景](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Failure%20detection%20%26%20recovery/Failure%20detection.md#failure-detection-scenarios-%E6%95%85%E9%9A%9C%E6%A3%80%E6%B5%8B%E5%9C%BA%E6%99%AF))中恢复。值得注意的是，它可以恢复a failed master or a failed intermediate master.
+`orchestrator`能够从一系列的故障场景([Failure detection scenarios 故障检测场景](https://github.com/Fanduzi/orchestrator-zh-doc/blob/master/Failure%20detection%20%26%20recovery/Failure%20detection.md#failure-detection-scenarios-%E6%95%85%E9%9A%9C%E6%A3%80%E6%B5%8B%E5%9C%BA%E6%99%AF))中恢复。值得注意的是，它可以恢复a failed master or a failed intermediate master.
 
 `orchestrator` 支持:
 
-* [Automated recovery](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Failure%20detection%20%26%20recovery/Topology%20recovery.md#automated-recovery)(takes action on unexpected failures)
-* [Graceful master promotion 在线切换](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Failure%20detection%20%26%20recovery/Topology%20recovery.md#graceful-master-promotion-%E5%9C%A8%E7%BA%BF%E5%88%87%E6%8D%A2)
-* [Manual recovery](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Failure%20detection%20%26%20recovery/Topology%20recovery.md#manual-recovery-%E6%89%8B%E5%8A%A8%E6%81%A2%E5%A4%8D)
-* [Manual, forced/panic failovers.](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Failure%20detection%20%26%20recovery/Topology%20recovery.md#manual-forced-failover-%E6%89%8B%E5%8A%A8%E5%BC%BA%E5%88%B6failover)
+* [Automated recovery](https://github.com/Fanduzi/orchestrator-zh-doc/blob/master/Failure%20detection%20%26%20recovery/Topology%20recovery.md#automated-recovery)(takes action on unexpected failures)
+* [Graceful master promotion 在线切换](https://github.com/Fanduzi/orchestrator-zh-doc/blob/master/Failure%20detection%20%26%20recovery/Topology%20recovery.md#graceful-master-promotion-%E5%9C%A8%E7%BA%BF%E5%88%87%E6%8D%A2)
+* [Manual recovery](https://github.com/Fanduzi/orchestrator-zh-doc/blob/master/Failure%20detection%20%26%20recovery/Topology%20recovery.md#manual-recovery-%E6%89%8B%E5%8A%A8%E6%81%A2%E5%A4%8D)
+* [Manual, forced/panic failovers.](https://github.com/Fanduzi/orchestrator-zh-doc/blob/master/Failure%20detection%20%26%20recovery/Topology%20recovery.md#manual-forced-failover-%E6%89%8B%E5%8A%A8%E5%BC%BA%E5%88%B6failover)
 
 ## Requirements
 要运行任何类型的故障转移, 您的拓扑必须支持:
 
 * Oracle GTID (with `MASTER_AUTO_POSITION=1`)
 * MariaDB GTID
-* [Pseudo GTID](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Various/Pseudo%20GTID.md)
+* [Pseudo GTID](https://github.com/Fanduzi/orchestrator-zh-doc/blob/master/Various/Pseudo%20GTID.md)
 * Binlog Servers
 
-更多细节见[MySQL Configuration](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Setup/%E9%85%8D%E7%BD%AE/Configuration%20%20Recovery.md#mysql-configuration)
+更多细节见[MySQL Configuration](https://github.com/Fanduzi/orchestrator-zh-doc/blob/master/Setup/%E9%85%8D%E7%BD%AE/Configuration%20%20Recovery.md#mysql-configuration)
 
-自动恢复是可以选的, 请参阅 [Configuration: Recovery](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Setup/配置/Configuration%20%20Recovery.md)
+自动恢复是可以选的, 请参阅 [Configuration: Recovery](https://github.com/Fanduzi/orchestrator-zh-doc/blob/master/Setup/配置/Configuration%20%20Recovery.md)
 
 ### What's in a recovery?
-基于[Failure detection](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Failure%20detection%20%26%20recovery/Failure%20detection.md), 一连串的事件构成了一个恢复过程:
+基于[Failure detection](https://github.com/Fanduzi/orchestrator-zh-doc/blob/master/Failure%20detection%20%26%20recovery/Failure%20detection.md), 一连串的事件构成了一个恢复过程:
 
 * 恢复前的钩子(执行外部进程)
 > Pre-recovery hooks (external processes execution)
@@ -332,9 +332,9 @@ an instance. An instance can be downtimed (via `orchestrator-client -c begin-dow
 请注意, 手动恢复(例如 `orchestrator-client -c recover`)会覆盖停机时间.
 
 ## Recovery hooks
-`orchestrator`支持钩子--通过恢复过程调用的外部脚本. 这些是通过shell, 特别是bash调用的命令数组. 参见恢复配置中的[Hooks](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Setup/%E9%85%8D%E7%BD%AE/Configuration%20%20Recovery.md#hooks)
+`orchestrator`支持钩子--通过恢复过程调用的外部脚本. 这些是通过shell, 特别是bash调用的命令数组. 参见恢复配置中的[Hooks](https://github.com/Fanduzi/orchestrator-zh-doc/blob/master/Setup/%E9%85%8D%E7%BD%AE/Configuration%20%20Recovery.md#hooks)
 
-* `OnFailureDetectionProcesses`: described in [Failure detection](https://github.com/Fanduzi/orchestrator-chn-doc/blob/master/Failure%20detection%20%26%20recovery/Failure%20detection.md).
+* `OnFailureDetectionProcesses`: described in [Failure detection](https://github.com/Fanduzi/orchestrator-zh-doc/blob/master/Failure%20detection%20%26%20recovery/Failure%20detection.md).
 * `PreGracefulTakeoverProcesses`: 在old master进入只读状态之前, 在`graceful-master-takeover`命令中调用.
 * `PreFailoverProcesses`
 * `PostMasterFailoverProcesses`
