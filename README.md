@@ -74,4 +74,4 @@ For more information, please see
 #### 配置文件参数详解
 * [配置参数详解-Ⅰ](https://github.com/Fanduzi/orchestrator-zh-doc/blob/master/Setup/配置/配置参数详解-Ⅰ.md)
 * [配置参数详解-Ⅱ](https://github.com/Fanduzi/orchestrator-zh-doc/blob/master/Setup/配置/配置参数详解-Ⅱ.md)
-* [配置参数详解-III](https://github.com/Fanduzi/orchestrator-zh-doc/blob/master/Setup/配置/配置参数详解-III.md)
+* [配置参数详解-Ⅲ](https://github.com/Fanduzi/orchestrator-zh-doc/blob/master/Setup/配置/配置参数详解-Ⅲ.md)
