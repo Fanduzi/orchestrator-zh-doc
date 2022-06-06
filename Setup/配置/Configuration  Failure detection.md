@@ -2,7 +2,7 @@
 # [Configuration: failure detection](https://github.com/openark/orchestrator/blob/master/docs/configuration-failure-detection.md)
 `orchestrator`将始终检测您的拓扑结构的故障. 作为一个配置问题, 您可以设置轮询频率和具体方式, 以便`orchestrator`在检测到故障时通知您.
 
->  [Failure detection](Failure%20detection%20%26%20recovery/Failure%20detection.md)
+>  [Failure detection](https://github.com/Fanduzi/orchestrator-zh-doc/blob/master/Failure%20detection%20%26%20recovery/Failure%20detection.md)
 
 恢复将在[Configuration: Recovery](https://github.com/Fanduzi/orchestrator-zh-doc/blob/master/Setup/配置/Configuration%20%20Recovery.md)中讨论
 
