@@ -9,7 +9,9 @@
 
 
 在另一个(目标)实例下重新定位一个副本。目的地的选择几乎是任意的;
+
 它(-d指定的实例)必须不是实例(-i指定的实例)的子/孙节点, 否则它可以在任何地方，并且可以是普通副本或Binlog server. Orchestrator将选择最佳的行动方案来重新定位副本。
+
 如果目标实例不能作为主实例（例如，没有二进制日志，版本不兼容，binlog格式不兼容等），则不采取任何行动。
 >Relocate a replica beneath another (destination) instance. The choice of destination is almost arbitrary;  
 it must not be a child/descendant of the instance, but otherwise it can be anywhere, and can be a normal replica or a binlog server.
