@@ -2,6 +2,7 @@
 
 > 说人话:
 > 将一个节点 A change master to指定节点B
+> 
 > B不能是A的从库或A从库的从库
 
 
