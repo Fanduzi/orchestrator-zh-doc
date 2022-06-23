@@ -68,7 +68,7 @@ For more information, please see
 
 #### Quick guides
 * [FAQ](https://github.com/Fanduzi/orchestrator-zh-doc/blob/master/Quick%20guides/FAQ.md)
-* [First Steps id](https://github.com/Fanduzi/orchestrator-zh-doc/blob/master/Quick%20guides/First%20Steps.md), a quick introduction to `orchestrator`
+* [First Steps](https://github.com/Fanduzi/orchestrator-zh-doc/blob/master/Quick%20guides/First%20Steps.md), a quick introduction to `orchestrator`
 
 
 #### 配置文件参数详解
