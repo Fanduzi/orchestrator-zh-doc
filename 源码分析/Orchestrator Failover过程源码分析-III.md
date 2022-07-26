@@ -244,11 +244,14 @@ orchestrator是根据ExecBinlogCoordinates比较出latest slave
 >- Relay_Master_Log_File
 >- Exec_Master_Log_Pos
 >表示sql_thread已经应用了主库哪个binlog哪个位置的日志.
-> 然而若想不丢数据, 则应该根据ReadBinlogCoordinates比较出latest slave, 即
+>
+> 然而若想不丢数据, 则应该根据ReadBinlogCoordinates比较出latest slave, 也就是MHA的实现方式, 即
 > - Master_Log_File
 > - Read_Master_Log_Pos
 > 使用ExecBinlogCoordinates选Latest Slave是可能丢数据的(即使开了半同步), 可以通过tc命令轻松复现orc这种选latest slave导致的丢数据问题. 
-> 具体模拟方案见[#1312](https://github.com/openark/orchestrator/issues/1312)
+>
+> 具体模拟方法见[#1312](https://github.com/openark/orchestrator/issues/1312)
+> 我修改了NewInstancesSorterByExec的Less的方法, 改为使用ReadBinlogCoordinates选择latest slave, 解决了上述问题.
 
 那么最准确的方式是要等所有slave sql_thread跑完. orchestrator虽然调用了WaitForSQLThreadUpToDate, 但只等待了10s(超时). 
 
