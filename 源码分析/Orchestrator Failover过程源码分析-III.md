@@ -169,7 +169,7 @@ sub force_shutdown($) {
     $slave_io_stopper->finish(0);
   }
 ```
-这是很合理的, 只要开始Failover了, 就说明MHA认为主库已经挂了, 那么停io_thread再根据Master_Log_File和Read_Master_Log_Pos是没问题的
+这是很合理的, 只要开始Failover了, 就说明MHA认为主库已经挂了, 那么停io_thread再根据Master_Log_File和Read_Master_Log_Pos选latest slave是没问题的
 ```perl
 ServerManager.pm
 sub identify_latest_slaves($$) {
@@ -278,7 +278,7 @@ func sortInstancesDataCenterHint(instances [](*Instance), dataCenterHint string)
 > }
 > ```
 > sort.Reverse返回的是一个*reverse. reverse结构体就一个匿名字段Interface
-> reverse上线了Less方法, 他本质就是使用Interface.Less, 只不过调换了参数顺序
+> reverse实现了Less方法, 他本质就是使用Interface.Less, 只不过调换了参数顺序
 > 所以Reverse()虽然返回的是初始数据，但是改变了数据的Less()方法, 在排序时调用这个就会产生逆排序的效果.
 
 NewInstancesSorterByExec的Less方法
@@ -326,6 +326,7 @@ func (this *InstancesSorterByExec) Less(i, j int) bool {
 ```
 简单来说, 就是根据ExecBinlogCoordinates比较, 如果ExecBinlogCoordinates相同在比DataCenter, DataCenter与DeadMaster一样的为"大"
 > instance.ExecBinlogCoordinates.LogFile = m.GetString("Relay_Master_Log_File")
+>
 > instance.ExecBinlogCoordinates.LogPos = m.GetInt64("Exec_Master_Log_Pos")
 
 那么至此`sortInstancesDataCenterHint`干了啥也就清楚了, 就是排了个序, 把most up-to-date从库放在最前面, 如果两个从库ExecBinlogCoordinates一样, 则从库所在数据中心和主库一样的放前面

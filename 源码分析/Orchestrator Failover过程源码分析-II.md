@@ -461,7 +461,7 @@ func recoverDeadMaster(topologyRecovery *TopologyRecovery, candidateInstanceKey 
 }
 
 ```
-recoverDeadMaster 主要做了几件事 ^a0c808
+recoverDeadMaster 主要做了几件事
 1. GetMasterRecoveryType, 确定到底用什么方式恢复, 是基于GTID? PseudoGTID? 还是BinlogServer?
 2. 重组拓扑, 我们的案例是使用RegroupReplicasGTID. 
     但这里有一个问题, 可能现在我们的新主库并不是我们"期望"的实例, 就是说之所以选他做主库可能是因为他有最全的日志. 但不是我们设置的prefer的
