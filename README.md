@@ -11,7 +11,7 @@ For more information, please see
 
 
 # TOC
-# [Table of Contents](https://github.com/Fanduzi/orchestrator-zh-doc/tree/master/docs#introduction)
+# [Table of Contents](https://github.com/Fanduzi/orchestrator-zh-doc#introduction)
 #### Introduction
 * [About](https://github.com/Fanduzi/orchestrator-zh-doc/blob/master/Introduction/About.md)
 * [License](https://github.com/Fanduzi/orchestrator-zh-doc/blob/master/Introduction/License.md)
